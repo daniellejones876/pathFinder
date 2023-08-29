@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_29_144319) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_29_144718) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -59,6 +59,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_144319) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "recommendations", force: :cascade do |t|
+    t.bigint "logbook_id", null: false
+    t.string "playlist_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["logbook_id"], name: "index_recommendations_on_logbook_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -76,4 +84,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_144319) do
   add_foreign_key "logbooks", "emojis"
   add_foreign_key "logbooks", "users"
   add_foreign_key "playlists", "emojis"
+  add_foreign_key "recommendations", "logbooks"
 end
