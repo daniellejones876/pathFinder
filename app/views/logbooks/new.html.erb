@@ -7,16 +7,15 @@ Hi from the new log page!
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
+    <%= f.association :emoji %>
     <%= f.input :summary %>
     <%= f.input :image, as: :file %>
-    <%= f.input :date, as: :hidden, input_html: { value: Date.today } %>
-    <%= f.association :emoji, as: :hidden  %>
     <%= f.association :user, as: :hidden, input_html: { value: current_user.id }  %>
 
   </div>
 
   <div class="form-actions">
-    <%= f.submit "New log" %>
+    <%= f.button :submit %>
   </div>
 <% end %>
 

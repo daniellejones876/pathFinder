@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: "pages#landing"
 
   get '/home', to: "pages#home"
+  get '/profile', to: "pages#profile"
 
   resources :logbooks do
     resources :recommendations, only: %i[show]
