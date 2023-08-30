@@ -1,19 +1,20 @@
 class JournalsController < ApplicationController
   before_action :set_journal, only: %i[edit update]
-  before_action :set_logbook, only: %i[new create edit]
+  before_action :set_logbook, only: %i[edit]
 
   def new
     @journal = Journal.new
+    @prompt = Prompt.all.sample.content
     @logbook = Logbook.find(params[:logbook_id])
   end
 
   def create
-    @journal = Journal.new(journal_params)
     @logbook = Logbook.find(params[:logbook_id])
+    @journal = Journal.new(journal_params)
     @journal.logbook = @logbook
 
     if @journal.save
-      redirect_to logbook_path(@journal), notice: 'Journal was successfully created.'
+      redirect_to logbook_path(@journal.logbook), notice: 'Journal was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -23,7 +24,7 @@ class JournalsController < ApplicationController
 
   def update
     if @journal.update(journal_params)
-      redirect_to logbook_path(@journal), notice: 'Journal was successfully updated.', status: :see_other
+      redirect_to logbook_path(@journal.logbook), notice: 'Journal was successfully updated.', status: :see_other
     else
       render :edit, status: :unprocessable_entity
     end
@@ -32,11 +33,11 @@ class JournalsController < ApplicationController
   private
 
   def set_logbook
-    @logbook = Logbook.find(params[:logbook_id])
+    @logbook = Logbook.find(params[:id])
   end
 
   def set_journal
-    @journal = Journal.find(params[:id])
+    @journal = Journal.find(params[:logbook_id])
   end
 
   def journal_params

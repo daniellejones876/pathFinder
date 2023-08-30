@@ -11,7 +11,6 @@ Hi from the new log page!
     <%= f.input :summary %>
     <%= f.input :image, as: :file %>
     <%= f.association :user, as: :hidden, input_html: { value: current_user.id }  %>
-
   </div>
 
   <div class="form-actions">
