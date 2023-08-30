@@ -1,0 +1,57 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 390px;
+  padding-top: 400px;
+  background: #E2E2E2;
+  h1 {
+    color: #02394A;
+  }
+
+  p {
+    color: #02394A;
+  }
+}
+.spacer {
+  aspect-ratio: 390/840;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+
+.blob {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  transform: translateY(-20%);
+}
+
+// .blob-mootion {
+//   position: absolute;
+//   transform: translateY(-20%);
+// }
+
+.blob:nth-child(2) {
+  filter: blur(30px);
+  transform: translateY(20%);
+}
+
+.layer1 {
+  background-image: asset-url('backgrounds/landing_page.png');
+}
+
+.layer2 {
+  background-image: asset-url('backgrounds/emoji.png');
+}
+
+.layer3 {
+  background-image: asset-url('backgrounds/image.png');
+}
+
+.layer4 {
+  background-image: asset-url('backgrounds/journal.png');
+}
