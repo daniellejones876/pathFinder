@@ -5,11 +5,8 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
+    <%= f.input :prompt_id %>
     <%= f.input :content %>
-    <%= f.input :date, as: :hidden, input_html: { value: Date.today } %>
-    <%= f.association :logbook, as: :hidden  %>
-    <%# <%= f.display :prompt, as: :hidden, input_html: { value: current_user.id }  %> %>
-
   </div>
 
   <div class="form-actions">
@@ -18,4 +15,4 @@
 <% end %>
 
 <%= link_to "Homepage", home_path %>
-<%= link_to "Logs index", journals_path %>
+<%= link_to "Logs index", logbooks_path %>

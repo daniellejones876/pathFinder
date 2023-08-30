@@ -2,13 +2,19 @@
 Hi from the log index!
 </h1>
 
+<ul>
 <% @logbooks.each do |logbook| %>
-      <%= cl_image_path logbook.image %>
-        <%= logbook.summary %>
-      </div>
-    <% end %>
-  </div>
-</div>
+<li>
+  Summary: <%= logbook.summary %>
+</li>
+<li>
+  Log created at: <%= logbook.created_at %>
+</li>
+<li>
+<%= link_to "View", logbook_path(logbook) %>
+</li>
+<% end %>
+</ul>
 
 <%= link_to "Homepage", home_path %>
 <%= link_to "New log", new_logbook_path %>

@@ -4,10 +4,13 @@ class JournalsController < ApplicationController
 
   def new
     @journal = Journal.new
+    @logbook = Logbook.find(params[:logbook_id])
   end
 
   def create
     @journal = Journal.new(journal_params)
+    @logbook = Logbook.find(params[:logbook_id])
+    @journal.logbook = @logbook
 
     if @journal.save
       redirect_to logbook_path(@journal), notice: 'Journal was successfully created.'
@@ -37,6 +40,6 @@ class JournalsController < ApplicationController
   end
 
   def journal_params
-    params.require(:journal).permit(:content, :date, :logbook_id, :prompt_id)
+    params.require(:journal).permit(:content, :logbook_id, :prompt_id)
   end
 end

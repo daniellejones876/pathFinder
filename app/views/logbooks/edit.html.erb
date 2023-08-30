@@ -2,5 +2,24 @@
 Hi from the edit log page!
 </h1>
 
-<%# insert this into form into the _form
-<%= f.input :photo, as: :file %>
+<%= simple_form_for(@logbook) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.association :emoji %>
+    <%= f.input :summary %>
+    <%= f.input :image, as: :file %>
+    <%= f.association :user, as: :hidden, input_html: { value: current_user.id }  %>
+
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
+<%= link_to "Homepage", home_path %>
+<%= link_to "Logs index", logbooks_path %>
+<%= link_to "Recommendation", logbook_recommendation_path(@logbook) %>
+<%= link_to "Back to this log", logbook_path(@logbook) %>
