@@ -2,7 +2,6 @@ class CreateJournals < ActiveRecord::Migration[7.0]
   def change
     create_table :journals do |t|
       t.text :content
-      t.date :date
       t.references :logbook, null: false, foreign_key: true
       t.references :prompt, null: false, foreign_key: true
 
