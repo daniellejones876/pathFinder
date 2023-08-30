@@ -1,25 +1,26 @@
 require "open-uri"
+Recommendation.destroy_all
+puts "Destroyed Recommendations"
 
 Journal.destroy_all
 puts "Destroyed Journals"
 
-Prompt.destroy_all
-puts "Destroyed Prompts"
-
 Logbook.destroy_all
 puts "Destroyed Logbooks"
+
+Prompt.destroy_all
+puts "Destroyed Prompts"
 
 User.destroy_all
 puts "Destroyed Users"
 
-Emoji.destroy_all
-puts "Destroyed Emojis"
-
 Playlist.destroy_all
 puts "Destroyed Playlists"
 
-Recommendation.destroy_all
-puts "Destroyed Recommendations"
+Emoji.destroy_all
+puts "Destroyed Emojis"
+
+
 
 diogo = User.new(email: "diogo@gmail.com", password: "123456")
 diogo.save
@@ -33,7 +34,7 @@ james.save
 puts "--------------Users created ------------------"
 
 
-file = URI.open("https://www.clipartmax.com/middle/m2i8H7b1K9N4K9m2_adult-emoji-flirty-emoticons-for-ios-free-download-smiling-emoji.png")
+file = URI.open("https://images.unsplash.com/photo-1682688759157-57988e10ffa8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80")
 happy = Emoji.new(title: "Happy")
 happy.photo.attach(io: file, filename: "happy.png", content_type: "image/png")
 happy.save
@@ -90,7 +91,7 @@ journal1.save
 puts "--------------Journal created ------------------"
 
 playlist = Playlist.new(title: "sad shit", url: "https://open.spotify.com/playlist/37i9dQZF1DX12YIlzNkccL?si=1e453bd87fd24247", image_url: "https://static.wikia.nocookie.net/pianista-superb/images/9/9a/Beethoven.png/revision/latest?cb%3D20200725110454&tbnid=cRwfhc9opXEFgM&vet=1&imgrefurl=https://pianista-superb.fandom.com/wiki/Ludwig_van_Beethoven&docid=sDTOw3EXIpcsdM&w=382&h=492&source=sh/x/im/m5/1&shem=uvafe4")
-playlist.emoji = sad
+playlist.emoji = happy
 playlist.save
 
 puts "--------------Playlist created ------------------"

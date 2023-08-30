@@ -1,1 +1,18 @@
 <h1>Hi from edit journal!</h1>
+
+<%= simple_form_for [@logbook, @journal] do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.association :prompt, label_method: :content %>
+    <%= f.input :content %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>
+
+<%= link_to "Homepage", home_path %>
+<%= link_to "Back to this log", logbook_path(@logbook) %>

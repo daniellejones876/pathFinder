@@ -1,5 +1,5 @@
 class RecommendationsController < ApplicationController
   def show
-    @recommendation = Recommendation.find(params[:logbook_id])
+    @recommendation = Recommendation.last.logbook.emoji.playlists.sample.title
   end
 end

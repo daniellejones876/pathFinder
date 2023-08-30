@@ -8,10 +8,10 @@ Hi from the log index!
   Summary: <%= logbook.summary %>
 </li>
 <li>
-  Log created at: <%= logbook.created_at %>
+  <%= logbook.created_at.strftime("%d of %B, %Y") %>, <%= logbook.created_at.strftime("%I:%M %p") %>
 </li>
 <li>
-<%= link_to "View", logbook_path(logbook) %>
+<%= link_to "Open", logbook_path(logbook) %>
 </li>
 <% end %>
 </ul>
