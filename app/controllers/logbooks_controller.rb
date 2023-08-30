@@ -1,5 +1,5 @@
 class LogbooksController < ApplicationController
-  before_action :set_logbook, only: %i[edit update destroy]
+  before_action :set_logbook, only: %i[show edit update destroy]
 
   def index
     @logbooks = Logbook.all
@@ -13,9 +13,10 @@ class LogbooksController < ApplicationController
 
   def create
     @logbook = Logbook.new(logbook_params)
+    @logbook.user = current_user
 
-    if @logbook.image.attached?
-      redirect_to logbook_path(@logbook), notice: 'Log was successfully created.' if @logbook.save
+    if @logbook.save
+      redirect_to logbooks_path, notice: 'Log was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -25,7 +26,7 @@ class LogbooksController < ApplicationController
 
   def update
     if @logbook.update(logbook_params)
-      redirect_to home_path, notice: 'Logbook was successfully updated.', status: :see_other
+      redirect_to logbook_path(@logbook), notice: 'Log was successfully updated.', status: :see_other
     else
       render :edit, status: :unprocessable_entity
     end
@@ -33,7 +34,7 @@ class LogbooksController < ApplicationController
 
   def destroy
     @logbook.destroy
-    redirect_to home_path, notice: 'Logbook was successfully destroyed.'
+    redirect_to logbooks_path, notice: 'Log was successfully destroyed.'
   end
 
   private
@@ -43,6 +44,6 @@ class LogbooksController < ApplicationController
   end
 
   def logbook_params
-    params.require(:logbook).permit(:summary, :image, :date, :emoji_id, :user_id)
+    params.require(:logbook).permit(:summary, :image, :emoji_id)
   end
 end
