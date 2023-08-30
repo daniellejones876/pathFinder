@@ -1,0 +1,24 @@
+<h1>
+Hi from the new log page!
+</h1>
+
+<%= simple_form_for(@logbook) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :summary %>
+    <%= f.input :image, as: :file %>
+    <%= f.input :date, as: :hidden, input_html: { value: Date.today } %>
+    <%= f.association :emoji, as: :hidden  %>
+    <%= f.association :user, as: :hidden, input_html: { value: current_user.id }  %>
+
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit "New log" %>
+  </div>
+<% end %>
+
+<%= link_to "Homepage", home_path %>
+<%= link_to "Logs index", logbooks_path %>
