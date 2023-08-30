@@ -33,31 +33,31 @@ james.save
 puts "--------------Users created ------------------"
 
 
-file = URI.open("https://www.clipartmax.com/middle/m2i8H7b1K9N4K9m2_adult-emoji-flirty-emoticons-for-ios-free-download-smiling-emoji.png")
+file = URI.open("https://www.pngitem.com/pimgs/m/0-9669_happy-emoji-png-high-quality-image-transparent-background.png")
 happy = Emoji.new(title: "Happy")
 happy.photo.attach(io: file, filename: "happy.png", content_type: "image/png")
 happy.save
 
 
-file = URI.open("https://www.clipartmax.com/middle/m2i8K9N4d3d3d3K9_clipart-inspiring-design-ideas-sad-face-photos-emoji-sad-emoji-png-transparent.png")
+file = URI.open("https://clipart-library.com/new_gallery/5-56430_shy-emoji-png-transparent-sad-face-emoji.png")
 content = Emoji.new(title: "Content")
 content.photo.attach(io: file, filename: "content.png", content_type: "image/png")
 content.save
 
 
-file = URI.open("https://www.pngitem.com/pimgs/m/50-500914_neutral-emoji-png-transparent-background-neutral-emoji-png.png")
+file = URI.open("https://emojiisland.com/cdn/shop/products/Neutral_Face_Emoji_1024x1024.png?v=1571606037.png")
 neutral = Emoji.new(title: "Apathetic")
 neutral.photo.attach(io: file, filename: "neutral.png", content_type: "image/png")
 neutral.save
 
 
-file = URI.open("https://www.clipartmax.com/middle/m2i8A0A0d3b1d3i8_and-so-a-sad-face-on-a-message-may-be-an-indication.png")
+file = URI.open("https://www.pngfind.com/pngs/m/318-3187321_emoji-emojis-iosemojis-iosemoji-iphone-iphoneemoji-shocked-emoji.png")
 sad = Emoji.new(title: "Sad")
 sad.photo.attach(io: file, filename: "sad.png", content_type: "image/png")
 sad.save
 
 
-file = URI.open("https://www.clipartmax.com/middle/m2H7H7H7H7G6A0N4_whatsapp-sad-emoji.png")
+file = URI.open("https://freepngimg.com/save/36860-sad-emoji-transparent-image.png")
 terrible = Emoji.new(title: "Terrible")
 terrible.photo.attach(io: file, filename: "terrible.png", content_type: "image/png")
 terrible.save
@@ -76,15 +76,16 @@ logbook1.save
 puts "--------------Logbooks created ------------------"
 
 
-prompt = Prompt.new(content: "Name 5 things...")
-prompt.save
+prompt1 = Prompt.create(content: "Name 5 things...")
+prompt2 = Prompt.create(content: "Name 10 things...")
+prompt3 = Prompt.create(content: "Name 15 things...")
 
 puts "--------------Prompts created ------------------"
 
 
 journal1 = Journal.new(content: "blah blah blah", date: Date.new)
 journal1.logbook = logbook1
-journal1.prompt = prompt
+journal1.prompt = prompt1
 journal1.save
 
 puts "--------------Journal created ------------------"

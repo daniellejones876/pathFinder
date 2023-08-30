@@ -63,7 +63,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_30_110556) do
   create_table "logbooks", force: :cascade do |t|
     t.text "summary"
     t.date "date"
-    t.bigint "emoji_id"
+    t.bigint "emoji_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
