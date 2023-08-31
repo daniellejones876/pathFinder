@@ -37,6 +37,12 @@ class LogbooksController < ApplicationController
     redirect_to logbooks_path, notice: 'Log was successfully destroyed.'
   end
 
+  def date
+    @date = Date.parse(params[:date])
+
+    @logbooks = Logbook.where("EXTRACT(YEAR from created_at) = ? and EXTRACT(MONTH from created_at) = ? and EXTRACT(DAY from created_at) = ?", @date.year, @date.month, @date.day)
+  end
+
   private
 
   def set_logbook

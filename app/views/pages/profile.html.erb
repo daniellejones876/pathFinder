@@ -1,8 +1,23 @@
-<h1>
-Hi from your profile page, <%= current_user.first_name %>!
-</h1>
+<div class="container">
+  <h1>
+    Dani <%= current_user.first_name %>!
+  </h1>
 
 
-Here we will have a mood chart and some user info
+  Statistical history:
+  <div class="container my-5 text-center">
+    <div class="btn-group" role="group" aria-label="Basic outlined example">
+      <button type="button" class="btn btn-outline-primary">Weekly</button>
+      <button type="button" class="btn btn-outline-primary">Monthly</button>
+    </div>
+  </div>
 
-<%= link_to "Homepage", home_path %>
+  <div class="container my-5 text-center">
+    <%= month_calendar do |date| %>
+      <%= link_to date_logbooks_path(date) do %>
+        <%= date.day %>
+      <% end %>
+    <% end %>
+  </div>
+  <%= link_to "Homepage", home_path %>
+</div>
