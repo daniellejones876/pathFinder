@@ -1,1 +1,21 @@
 // Specific CSS for your home-page
+
+.home-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 150px;
+  background: #E2E2E2;
+  h1 {
+    color: #02394A;
+  }
+
+  p {
+    color: #02394A;
+  }
+}
+
+.home-bg {
+  background-image: asset-url('backgrounds/home.png');
+}
