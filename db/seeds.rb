@@ -13,11 +13,16 @@ Playlist.destroy_all
 puts "Destroyed Playlists"
 Emoji.destroy_all
 puts "Destroyed Emojis"
-diogo = User.new(email: "diogo@gmail.com", password: "123456")
+
+
+diogo = User.new(email: "diogo@gmail.com", password: "123456", first_name: "Diogo", last_name: "Pinto")
 diogo.save
-dani = User.new(email: "dani@gmail.com", password: "123456")
+
+dani = User.new(email: "dani@gmail.com", password: "123456", first_name: "Dani", last_name: "Jones")
 dani.save
-james = User.new(email: "james@gmail.com", password: "123456")
+
+james = User.new(email: "james@gmail.com", password: "123456", first_name: "James", last_name: "Galler")
+
 james.save
 
 puts "--------------Users created ------------------"
