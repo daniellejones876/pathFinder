@@ -57,7 +57,6 @@ sad = Emoji.new(title: "Sad")
 sad.photo.attach(io: file, filename: "sad.png", content_type: "image/png")
 sad.save
 
-
 file = URI.open("https://www.clipartmax.com/middle/m2H7H7H7H7G6A0N4_whatsapp-sad-emoji.png")
 terrible = Emoji.new(title: "Terrible")
 terrible.photo.attach(io: file, filename: "terrible.png", content_type: "image/png")
@@ -65,23 +64,16 @@ terrible.save
 
 puts "--------------Emojis created ------------------"
 
-
-
-logbook1 = Logbook.new(summary: "Summary Here", date: Date.new)
+logbook1 = Logbook.new(summary: "Summary Here")
 logbook1.emoji = happy
 logbook1.user = diogo
 logbook1.save
-
-
-
 puts "--------------Logbooks created ------------------"
-
 
 prompt = Prompt.new(content: "Name 5 things...")
 prompt.save
 
 puts "--------------Prompts created ------------------"
-
 
 journal1 = Journal.new(content: "blah blah blah", date: Date.new)
 journal1.logbook = logbook1

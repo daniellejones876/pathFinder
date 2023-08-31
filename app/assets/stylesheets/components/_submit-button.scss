@@ -1,0 +1,76 @@
+// .submit-button {
+//   border: 1px solid #9DB1DE;
+//   background: none;
+//   padding: 10px 20px;
+//   font-size: 15px;
+//   transition: .8s;
+//   color: #02394A;
+//   position: relative;
+//   overflow: hidden;
+//   cursor: pointer;
+
+// }
+
+// .submit-button::before {
+//   content: "";
+//   position: absolute;
+//   left: 0;
+//   width: 100%;
+//   height: 0%;
+//   background: #9DB1DE;
+//   z-index: -1;
+//   transition: .8s;
+// }
+
+// .submit-button:active:after {
+//   bottom: 0;
+//   border-radius: 50% 50% 0 0;
+// }
+
+// .submit-button:active {
+//   height: 180%;
+// }
+
+
+.submit-button{
+  position: relative;
+  background-color: #96C5DF;
+  border-radius: 3em;
+  font-size: 16px;
+  color: #CCDBDC;
+  padding: 0.6em 1.6em;
+  cursor:pointer;
+  user-select:none;
+  text-align: center;
+  text-decoration: none;
+  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s; /* Safari */
+}
+
+.submit-button:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 3em;
+  left: 0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  box-shadow: 0 0 10px 40px #9DB1DE;
+}
+
+.submit-button:active:after {
+  box-shadow: 0 0 0 0 #9DB1DE;
+  position: absolute;
+  border-radius: 3em;
+  left: 0;
+  top:0;
+  opacity: 1;
+  transition: 0s;
+}
+
+.submit-button:active {
+  top: 1px;
+}
