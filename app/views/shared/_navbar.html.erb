@@ -1,35 +1,14 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to home_path class: "nav-link" do %>
-              <i class="fa-regular fa-house" style="color: #B49ACC;"></i>
-            <% end %>
-          </li>
-          <li class="nav-item active">
-            <%= link_to home_path class: "nav-link" do %>
-              <i class="fa-regular fa-face-smile-wink" style="color: #B49ACC;"></i>
-            <% end %>
-          </li>
-          <li class="nav-item active">
-            <%= link_to home_path class: "nav-link" do %>
-              <i class="fa-regular fa-book-open" style="color: #B49ACC;"></i>
-            <% end %>
-          </li>
-          <li class="nav-item active">
-            <%= link_to home_path class: "nav-link" do %>
-              <i class="fa-regular fa-user" style="color: #B49ACC;"></i>
-            <% end %>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-  </div>
+<div class="navbar">
+  <%= link_to home_path do %>
+    <i class="fa-solid fa-house" style="color: #CCDBDC;"></i>
+  <% end %>
+  <%= link_to new_logbook_path do %>
+    <i class="fa-solid fa-face-smile-wink" style="color: #ccdbdc;"></i>
+  <% end %>
+  <%= link_to logbooks_path do %>
+    <i class="fa-solid fa-book-open" style="color: #ccdbdc;"></i>
+  <% end %>
+  <%= link_to profile_path do %>
+    <i class="fa-solid fa-user" style="color: #CCDBDC;"></i>
+  <% end %>
 </div>

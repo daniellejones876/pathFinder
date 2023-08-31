@@ -16,11 +16,11 @@
   }
 }
 .spacer {
-  aspect-ratio: 390/840;
   width: 100%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  z-index: 10;
 }
 
 
