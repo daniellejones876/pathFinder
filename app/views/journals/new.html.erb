@@ -1,23 +1,24 @@
-<h1>Hi from the new journal page!</h1>
+Today, <%= Date.today.strftime("%d %b, %Y") %>
 
 <%= simple_form_for [@logbook, @journal] do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-<div data-controller="shuffle-prompt">
-  <div class="form-inputs">
-      <%= f.input :prompt, label_method: :content, data: {shuffle_prompt_target: "prompt"} %>
-      <button data-action="click->shuffle-prompt#shuffle">
-        <i class="fa-solid fa-shuffle"></i>
+  <div data-controller="shuffle-prompt">
+    <div class="form-inputs">
+      <p data-shuffle-prompt-target="prompt"><%= @sample_prompt.content %></p>
+      <%= f.input :prompt_id, as: :hidden, input_html: { value: @sample_prompt.id, data: {shuffle_prompt_target: "promptInput" } } %>
+      <button data-action="click->shuffle-prompt#shuffle", class="btn btn-outline-secondary mb-5" >
+        <i class="fa-solid fa-shuffle"></i> New prompt
       </button>
-    <%= f.input :content %>
+      <button data-action="click->shuffle-prompt#clear", class="btn btn-outline-secondary mb-5" >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <%= f.input :content, label: "Write here" %>
+    </div>
   </div>
-</div>
 
   <div class="form-actions">
-    <%= f.submit "New log" %>
+    <%= f.submit 'Save', class: "btn btn-outline-secondary" %>
   </div>
 <% end %>
-
-<%= link_to "Homepage", home_path %>
-<%= link_to "Logs index", logbooks_path %>
