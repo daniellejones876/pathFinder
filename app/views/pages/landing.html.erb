@@ -4,9 +4,6 @@
     <h1>pathFinder.</h1>
     <p class="lead">Chi va piano, va sano e va lontano
                           "Who goes slowly, goes safely and goes far."</p>
-    <%# <%= link_to "Homepage", home_path %>
-    <%# <%= link_to "New log", new_logbook_path %>
-    <%# <%= link_to "Logs index", logbooks_path %>
   </div>
 
   <div class="blob">
@@ -49,7 +46,7 @@
     </svg>
   </div>
 
-  <div class="blob">
+  <%= link_to home_path, class: "blob" do %>
     <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg">
       <defs>
         <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -87,5 +84,5 @@
         </animate>
       </path>
     </svg>
-  </div>
+  <% end %>
 </div>
