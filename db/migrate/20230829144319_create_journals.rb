@@ -3,7 +3,7 @@ class CreateJournals < ActiveRecord::Migration[7.0]
     create_table :journals do |t|
       t.text :content
       t.references :logbook, null: false, foreign_key: true
-      t.references :prompt, null: false, foreign_key: true
+      t.references :prompt, null: true, foreign_key: true
 
       t.timestamps
     end

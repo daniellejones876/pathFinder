@@ -1,9 +1,9 @@
 class Logbook < ApplicationRecord
   has_one_attached :image
 
-  belongs_to :emoji, optional: true
+  belongs_to :emoji
   belongs_to :user
 
   has_many :journals, dependent: :destroy
-  has_many :recommendations
+  has_one :recommendation, dependent: :destroy
 end
