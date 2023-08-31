@@ -4,6 +4,6 @@ class Logbook < ApplicationRecord
   belongs_to :emoji, optional: true
   belongs_to :user
 
-  has_many :journals
+  has_many :journals, dependent: :destroy
   has_many :recommendations
 end
