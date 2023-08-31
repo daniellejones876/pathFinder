@@ -1,10 +1,9 @@
 class JournalsController < ApplicationController
   before_action :set_journal, only: %i[edit update]
-  before_action :set_logbook, only: %i[edit]
+  before_action :set_logbook, only: %i[edit update]
 
   def new
     @journal = Journal.new
-    @prompt = Prompt.all.sample.content
     @logbook = Logbook.find(params[:logbook_id])
   end
 
@@ -20,7 +19,8 @@ class JournalsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+  end
 
   def update
     if @journal.update(journal_params)
@@ -33,14 +33,14 @@ class JournalsController < ApplicationController
   private
 
   def set_logbook
-    @logbook = Logbook.find(params[:id])
+    @logbook = Logbook.find(params[:logbook_id])
   end
 
   def set_journal
-    @journal = Journal.find(params[:logbook_id])
+    @journal = Journal.find(params[:id])
   end
 
   def journal_params
-    params.require(:journal).permit(:content, :logbook_id, :prompt_id)
+    params.require(:journal).permit(:content, :prompt_id)
   end
 end

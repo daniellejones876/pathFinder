@@ -31,32 +31,29 @@ james.save
 
 puts "--------------Users created ------------------"
 
-file = URI.open("")
+# file = URI.open("")
 happy = Emoji.new(title: "Happy")
-happy.photo.attach(io: file, filename: "happy.png", content_type: "image/png")
+# happy.photo.attach(io: file, filename: "happy.png", content_type: "image/png")
 happy.save
 
-
-file = URI.open("")
+# file = URI.open("")
 content = Emoji.new(title: "Content")
-content.photo.attach(io: file, filename: "content.png", content_type: "image/png")
+# content.photo.attach(io: file, filename: "content.png", content_type: "image/png")
 content.save
 
-
-file = URI.open("https://www.pngitem.com/pimgs/m/50-500914_neutral-emoji-png-transparent-background-neutral-emoji-png.png")
+# file = URI.open("https://www.pngitem.com/pimgs/m/50-500914_neutral-emoji-png-transparent-background-neutral-emoji-png.png")
 neutral = Emoji.new(title: "Apathetic")
-neutral.photo.attach(io: file, filename: "neutral.png", content_type: "image/png")
+# neutral.photo.attach(io: file, filename: "neutral.png", content_type: "image/png")
 neutral.save
 
-
-file = URI.open("")
+# file = URI.open("")
 sad = Emoji.new(title: "Sad")
-sad.photo.attach(io: file, filename: "sad.png", content_type: "image/png")
+# sad.photo.attach(io: file, filename: "sad.png", content_type: "image/png")
 sad.save
 
-file = URI.open("")
+# file = URI.open("")
 terrible = Emoji.new(title: "Terrible")
-terrible.photo.attach(io: file, filename: "terrible.png", content_type: "image/png")
+# terrible.photo.attach(io: file, filename: "terrible.png", content_type: "image/png")
 terrible.save
 
 puts "--------------Emojis created ------------------"
@@ -121,6 +118,7 @@ puts "--------------Playlists created ------------------"
 
 recommendation1 = Recommendation.new
 recommendation1.playlist_url = playlist1
+recommendation1.logbook = logbook1
 recommendation1.save
 
 recommendation2 = Recommendation.new
