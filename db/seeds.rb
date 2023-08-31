@@ -34,10 +34,8 @@ puts "--------------Users created ------------------"
 happy = Emoji.new(title: "Happy", image: "<i class='fa-solid fa-face-smile-beam' style='color: #ccdbdc;'></i>")
 happy.save
 
-
 content = Emoji.new(title: "Content", image: "<i class='fa-solid fa-face-smile' style='color: #ccdbdc;'></i>")
 content.save
-
 
 neutral = Emoji.new(title: "Apathetic", image: "<i class='fa-solid fa-face-meh' style='color: #ccdbdc;'></i>")
 neutral.save
