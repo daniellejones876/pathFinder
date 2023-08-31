@@ -1,5 +1,5 @@
 <h1>
-Hi from the new log page!
+Emoji selector
 </h1>
 
 <%= simple_form_for(@logbook) do |f| %>
@@ -8,8 +8,6 @@ Hi from the new log page!
 
   <div class="form-inputs">
     <%= f.association :emoji %>
-    <%= f.input :summary %>
-    <%= f.input :image, as: :file %>
     <%= f.association :user, as: :hidden, input_html: { value: current_user.id }  %>
   </div>
 

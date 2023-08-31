@@ -1,0 +1,19 @@
+<div class="container mt-3 text-center">
+  <h1><%= @date %></h1>
+  <% if @logbooks.empty? %>
+    <div class="container mt-5">
+      <img src="https://source.unsplash.com/2Ts5HnA67k8" alt="" width="200" class="shadow-lg rounded-circle my-3" >
+      <p>Empty...</p>
+    </div>
+  <% else %>
+    <div class="card mt-2">
+      <div class="shadow card-body">
+        <ul>
+          <% @logbooks.each do |log| %>
+            <%= log.summary %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+</div>
