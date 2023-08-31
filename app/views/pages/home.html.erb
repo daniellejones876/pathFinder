@@ -1,12 +1,15 @@
-<h1>
-Hi from the homepage!
-</h1>
+<div class="home-container home-bg spacer">
+  <div class="container">
+    <h1>Welcome Dani 💜</h1>
+    <p class="text-muted">Chi va piano, va sano e va lontano
+                          "Who goes slowly, goes safely and goes far."</p>
+    <%= link_to "New log", new_logbook_path %>
+    <%= link_to "New journal", new_logbook_journal_path(@logbook) %>
+    <%= link_to "Profile", profile_path %>
+    <%= link_to "Logs index", logbooks_path %>
 
-<%= link_to "New log", new_logbook_path %>
-<%= link_to "New journal", new_logbook_journal_path(@logbook) %>
-<%= link_to "Profile", profile_path %>
-<%= link_to "Logs index", logbooks_path %>
-
-<div class="container">
-  <button class="submit-button">Log  <i class="fa-solid fa-angles-right" style="color: #ccdbdc;"></i></button>
+    <div class="container">
+      <button class="submit-button">Log  <i class="fa-solid fa-angles-right" style="color: #ccdbdc;"></i></button>
+    </div>
+  </div>
 </div>
