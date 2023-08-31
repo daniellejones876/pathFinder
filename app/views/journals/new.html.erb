@@ -1,16 +1,18 @@
 <h1>Hi from the new journal page!</h1>
 
-<%= @prompt %>
-
-
 <%= simple_form_for [@logbook, @journal] do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
+<div data-controller="shuffle-prompt">
   <div class="form-inputs">
-    <%= f.association :prompt, label_method: :content %>
+      <%= f.input :prompt, label_method: :content, data: {shuffle_prompt_target: "prompt"} %>
+      <button data-action="click->shuffle-prompt#shuffle">
+        <i class="fa-solid fa-shuffle"></i>
+      </button>
     <%= f.input :content %>
   </div>
+</div>
 
   <div class="form-actions">
     <%= f.submit "New log" %>

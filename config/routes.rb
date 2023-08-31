@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   get '/home', to: "pages#home"
   get '/profile', to: "pages#profile"
+  get "/prompt", to: "prompts#sample"
 
   resources :logbooks do
     resources :recommendations, only: %i[show]

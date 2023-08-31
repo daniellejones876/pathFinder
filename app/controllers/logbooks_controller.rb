@@ -2,7 +2,7 @@ class LogbooksController < ApplicationController
   before_action :set_logbook, only: %i[show edit update destroy]
 
   def index
-    @logbooks = Logbook.all
+    @logbooks = Logbook.where(user: current_user)
   end
 
   def show; end
@@ -16,7 +16,7 @@ class LogbooksController < ApplicationController
     @logbook.user = current_user
 
     if @logbook.save
-      redirect_to logbooks_path, notice: 'Log was successfully created.'
+      redirect_to edit_logbook_path(@logbook), notice: 'Log was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
