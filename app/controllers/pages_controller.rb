@@ -6,6 +6,6 @@ class PagesController < ApplicationController
 
   def profile
     @logbooks = Logbook.where(user: current_user)
-    @this_month = @logbooks.where(created_at: (Date.today - 30)..(Date.tomorrow))
+    @this_week = @logbooks.where(created_at: (Date.today - 7)..(Date.tomorrow))
   end
 end

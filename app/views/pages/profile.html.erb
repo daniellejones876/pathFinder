@@ -21,3 +21,12 @@
   </div>
   <%= link_to "Homepage", home_path %>
 </div>
+
+
+
+
+
+
+<% @logbooks.each do |logbook| %>
+  <%= logbook.emoji.value %>
+<% end %>
