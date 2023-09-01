@@ -13,6 +13,6 @@
   <body class="body-view">
     <%= yield %>
     <%= render "shared/navbar" if user_signed_in? && action_name != "landing" %>
-    <%= render "shared/flashes" %>
+    <%# <%= render "shared/flashes" %>
   </body>
 </html>

@@ -1,22 +1,46 @@
-<div class="home-container home-bg spacer">
-  <div class="container mb-3">
-    <h1>Hi <%= current_user.first_name %> 💜, welcome</h1>
-    <p class="lead">Chi va piano, va sano e va lontano
-                          "Who goes slowly, goes safely and goes far."</p>
-  </div>
-    <div class="container">
-      <h5>Recommendations</h5>
-    </div>
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+<div class="wrap">
+  <div class="h-container home-bg">
+    <header class="top">
+    <h1 class="top">Welcome, <%= current_user.first_name %> 💜</h1>
+      <time datetime="01-09-2023">01 September, 2023</time>
 
+    </header>
+    <div class="notification">
+      <p>
+        <strong>
+          <i class="fa-solid fa-bell" style="color: #02394a;"></i>
+          Activities Today:
+        </strong>
+        Meditation and Relaxation
+      </p>
+      <small>8:00pm</small>
+    </div>
+    <div class="container mx-4 mt-3">
+      <p>Chi va piano, va sano e va lontano "Who goes slowly, goes safely and goes far."</p>
+    </div>
+    <section class="content">
+      <h2 class="heading">What do you need today?</h2>
+      <div class="slides">
+      <article class="article">
+      <img src="http://co0kie.github.io/codepen/mindful/buddhist-yoga-pose.svg" alt="">
+        <div class="text">
+          <h6>Meditation Zen</h6>
+          <p>Recommended in the morning</p>
+        </div>
+      </article>
+      </div>
+    </section>
+  <div class="container">
+    <h5>Recommendations</h5>
+  </div>
+
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
-
-  <div class="carousel-inner">
-
+    <div class="carousel-inner">
     <div class="carousel-item active" style="height:200px">
       <img src="https://images.unsplash.com/photo-1538045698727-ac45d4365100?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80" class="d-block w-100" alt="">
       <div class="carousel-caption d-md-block">
@@ -24,7 +48,6 @@
         <p>Record your thoughts ✐</p>
       </div>
     </div>
-
     <div class="carousel-item" style="height:200px">
       <img src="https://images.unsplash.com/photo-1604313477128-4e121c72c5ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2874&q=80" class="d-block w-100" alt="...">
       <div class="carousel-caption d-md-block">
@@ -32,7 +55,6 @@
         <p>Open your mind to the world of sound 🎶</p>
       </div>
     </div>
-
     <div class="carousel-item" style="height:200px">
       <img src="https://images.unsplash.com/photo-1544716278-e513176f20b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2874&q=80" class="d-block w-100" alt="...">
       <div class="carousel-caption d-md-block">
@@ -49,15 +71,5 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
-</div>
-
-  <div class="container ">
-    <%= link_to "New log", new_logbook_path %>
-    <%= link_to "New journal", new_logbook_journal_path(@logbook) if @logbook %>
-    <%= link_to "Profile", profile_path %>
-    <%= link_to "Logs index", logbooks_path %>
-
-    <div class="container">
-      <button class="submit-button">Log  <i class="fa-solid fa-angles-right" style="color: #ccdbdc;"></i></button>
-    </div>
   </div>
+</div>
