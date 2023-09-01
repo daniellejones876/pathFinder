@@ -5,7 +5,7 @@
   align-items: center;
   text-align: center;
   min-height: 390px;
-  padding-top: 400px;
+  padding-top: 350px;
   background: #E2E2E2;
   h1 {
     color: #02394A;
@@ -26,15 +26,11 @@
 
 .blob {
   position: absolute;
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   transform: translateY(-20%);
+  padding-top: 200px;
 }
-
-// .blob-mootion {
-//   position: absolute;
-//   transform: translateY(-20%);
-// }
 
 .blob:nth-child(2) {
   filter: blur(30px);
@@ -56,3 +52,5 @@
 .layer4 {
   background-image: asset-url('backgrounds/journal.png');
 }
+
+// Specific CSS for your home-page

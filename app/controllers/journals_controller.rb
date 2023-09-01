@@ -4,6 +4,7 @@ class JournalsController < ApplicationController
 
   def new
     @journal = Journal.new
+    @sample_prompt = Prompt.all.sample
     @logbook = Logbook.find(params[:logbook_id])
   end
 

@@ -7,55 +7,49 @@
     <div class="container">
       <h5>Recommendations</h5>
     </div>
-  <div class="container mt-5">
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+
+  <div class="carousel-inner">
+
+    <div class="carousel-item active" style="height:200px">
+      <img src="https://images.unsplash.com/photo-1538045698727-ac45d4365100?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80" class="d-block w-100" alt="">
+      <div class="carousel-caption d-md-block">
+        <h5>Journal</h5>
+        <p>Record your thoughts ✐</p>
       </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
+    </div>
 
-          <%= link_to logbooks_path do %>
-            <i class="fa-solid fa-book-open" style="color: #ffff;"></i>
-          <% end %>
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Journal</h5>
-            <p>Record your thoughts ✐</p>
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <img src="..." class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Music</h5>
-            <p>Here's a playlist for you 🎶</p>
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <img src="..." class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Booklist</h5>
-            <p>We narrowed down a library for you 📚</p>
-          </div>
-        </div>
+    <div class="carousel-item" style="height:200px">
+      <img src="https://images.unsplash.com/photo-1604313477128-4e121c72c5ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2874&q=80" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-md-block">
+        <h5>Listen</h5>
+        <p>Open your mind to the world of sound 🎶</p>
       </div>
+    </div>
 
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+    <div class="carousel-item" style="height:200px">
+      <img src="https://images.unsplash.com/photo-1544716278-e513176f20b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2874&q=80" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-md-block">
+        <h5>Book Library</h5>
+        <p>Explore the world of prose and poetry at your fingertips 📚</p>
+      </div>
     </div>
   </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
-
-
 
   <div class="container ">
     <%= link_to "New log", new_logbook_path %>

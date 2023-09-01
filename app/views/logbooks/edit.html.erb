@@ -1,25 +1,16 @@
-<h1>
-Hi from the edit log page!
-</h1>
-
 <%= simple_form_for(@logbook) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.association :emoji %>
-    <%= f.input :summary %>
-    <%= f.input :image, as: :file %>
+    <%= f.association :emoji, label: "How was your day?" %>
+    <%= f.input :summary, label: "Today's note" %>
+    <%= f.input :image, as: :file, label: "Today's photo" %>
     <%= f.association :user, as: :hidden, input_html: { value: current_user.id }  %>
 
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.submit 'Done', class: "btn btn-outline-secondary" %>
   </div>
 <% end %>
-
-<%= link_to "Homepage", home_path %>
-<%= link_to "Logs index", logbooks_path %>
-<%= link_to "Recommendation", logbook_recommendation_path(@logbook) %>
-<%= link_to "Back to this log", logbook_path(@logbook) %>
