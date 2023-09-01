@@ -1,18 +1,21 @@
-<h1 class="text-center">
-  Hi from the log index!
-</h1>
-
-<div class="container">
-  <div class="">
-    <% @logbooks.each do |logbook| %>
-      <%= link_to logbook_path(logbook) do %>
-        <div class="card my-5 rounded border-0 shadow-sm">
-          <div style = "font-weight: lighter;">
-            <%= logbook.created_at.strftime("%d %b, %Y") %>, <%= logbook.created_at.strftime("%I:%M %p") %>
+<div class="h-container home-bg spacer">
+  <div class="container mt-5">
+    <h1 class="text-center">
+      Your path
+    </h1>
+    <div class="container">
+      <div class="">
+        <% @logbooks.each do |logbook| %>
+          <%= link_to logbook_path(logbook) do %>
+            <div class="card my-5 rounded border-0 shadow-sm">
+              <div style = "font-weight: lighter;">
+                <%= logbook.created_at.strftime("%d %b, %Y") %>, <%= logbook.created_at.strftime("%I:%M %p") %>
+              </div>
+              <%= logbook.summary.truncate(50) %>
           </div>
-          <%= logbook.summary.truncate(50) %>
+          <% end %>
+        <% end %>
       </div>
-      <% end %>
-    <% end %>
+    </div>
   </div>
 </div>
