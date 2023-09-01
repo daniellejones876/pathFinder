@@ -1,27 +1,30 @@
-<h1>
-Hi from the log show!
-</h1>
-  <li>
-  <%# <%= cl_image_tag(@logbook.emoji.photo.key, width: 80, height: 60, crop: :fill) %> %>
-  </li>
+<div class="container">
+  <h1 class="text-center">
+  Hi from the log show!
+  </h1>
 
-    <%= cl_image_tag(@logbook.image.key, width: 400, height: 300, crop: :fill) if @logbook.image.attached? %>
     <li>
-    <%= @logbook.summary %>
+    <%= @logbook.emoji.image.html_safe %>
     </li>
-    <li>
-    <%= @logbook.created_at.strftime("%d of %B, %Y") %>, <%= @logbook.created_at.strftime("%I:%M %p") %>
-    </li>
-      <% @logbook.journals.each do |journal| %>
-        <li>
-        Journal entry at <%= journal.created_at.strftime("%I:%M %p") %>:
-        <%= journal.prompt.content %>
-        <%= journal.content %>
-        <%= link_to "Edit journal", edit_logbook_journal_path(@logbook, journal) %>
-        </li>
-      <% end %>
 
-<%= link_to "Update", edit_logbook_path(@logbook) %>
-<%= link_to "Delete", logbook_path(@logbook), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this log?" } %>
-<%= link_to "Homepage", home_path %>
-<%= link_to "Index", logbooks_path %>
+      <%= cl_image_tag(@logbook.image.key, width: 400, height: 300, crop: :fill) if @logbook.image.attached? %>
+      <li>
+      <%= @logbook.summary %>
+      </li>
+      <li>
+      <%= @logbook.created_at.strftime("%d of %B, %Y") %>, <%= @logbook.created_at.strftime("%I:%M %p") %>
+      </li>
+        <% @logbook.journals.each do |journal| %>
+          <li>
+          Journal entry at <%= journal.created_at.strftime("%I:%M %p") %>:
+          <%= journal.prompt.content %>
+          <%= journal.content %>
+          <%= link_to "Edit journal", edit_logbook_journal_path(@logbook, journal) %>
+          </li>
+        <% end %>
+
+  <%= link_to "Update", edit_logbook_path(@logbook) %>
+  <%= link_to "Delete", logbook_path(@logbook), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this log?" } %>
+  <%= link_to "Homepage", home_path %>
+  <%= link_to "Index", logbooks_path %>
+</div>

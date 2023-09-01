@@ -1,20 +1,18 @@
-<h1>
-Hi from the log index!
+<h1 class="text-center">
+  Hi from the log index!
 </h1>
 
-<ul>
-<% @logbooks.each do |logbook| %>
-<li>
-  Summary: <%= logbook.summary %>
-</li>
-<li>
-  <%= logbook.created_at.strftime("%d of %B, %Y") %>, <%= logbook.created_at.strftime("%I:%M %p") %>
-</li>
-<li>
-<%= link_to "Open", logbook_path(logbook) %>
-</li>
-<% end %>
-</ul>
-
-<%= link_to "Homepage", home_path %>
-<%= link_to "New log", new_logbook_path %>
+<div class="container">
+  <div class="">
+    <% @logbooks.each do |logbook| %>
+      <%= link_to logbook_path(logbook) do %>
+        <div class="card my-5 rounded border-0 shadow-sm">
+          <div style = "font-weight: lighter;">
+            <%= logbook.created_at.strftime("%d %b, %Y") %>, <%= logbook.created_at.strftime("%I:%M %p") %>
+          </div>
+          <%= logbook.summary.truncate(50) %>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
