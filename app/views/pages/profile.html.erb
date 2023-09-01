@@ -3,29 +3,29 @@
     <%= current_user.first_name %>!
   </h1>
 
-
-  Your Statistical history:
-  <div class="container my-5 text-center">
-    <div class="btn-group" role="group" aria-label="Basic outlined example">
-      <button type="button" class="btn btn-outline-primary">Weekly</button>
-      <button type="button" class="btn btn-outline-primary">Monthly</button>
-    </div>
-  </div>
-
-  <div class="container my-5 text-center">
-    <%= month_calendar do |date| %>
-      <%= link_to date_logbooks_path(date) do %>
-        <%= date.day %>
-      <% end %>
-    <% end %>
-  </div>
   <%= link_to "Homepage", home_path %>
 
-  Chart:
-  <div class="chart mb-5">
-    <%= area_chart Emoji.group_by_day_of_week(:created_at,format: "%a").count %>
-  </div>
+  Your Statistical history:
+  <div data-controller="profile">
+    <div class="container my-5 text-center">
+      <div class="btn-group" role="group" aria-label="Basic outlined example">
+        <button type="button" class="btn btn-outline-primary" data-action="click->profile#showChart" data-profile-target="weeklyBtn" disabled>Weekly</button>
+        <button type="button" class="btn btn-outline-primary" data-action="click->profile#showCalendar" data-profile-target="monthlyBtn">Monthly</button>
+      </div>
+    </div>
 
+    <div class="container my-5 text-center d-none" data-profile-target="calendar">
+      <%= month_calendar do |date| %>
+        <%= link_to date_logbooks_path(date) do %>
+          <%= date.day %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="chart mb-5" data-profile-target="chart">
+      <%= area_chart Emoji.group_by_day_of_week(:created_at,format: "%a").maximum(:value) %>
+    </div>
+  </div>
 </div>
 
 
