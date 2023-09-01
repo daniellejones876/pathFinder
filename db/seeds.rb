@@ -157,7 +157,7 @@ puts "Creating playlists..."
 playlist1 = Playlist.new(
   title: "80s Mix",
   url: "https://open.spotify.com/playlist/37i9dQZF1EQqZlCxLOykhS?si=818f3c39dcd1440f&nd=1",
-  image_url: '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1EQqZlCxLOykhS?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
+  image_url: '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1EQqZlCxLOykhS?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
 )
 playlist1.emoji = happy
 playlist1.save
@@ -165,7 +165,7 @@ playlist1.save
 playlist2 = Playlist.new(
   title: "Morning Commute",
   url: "https://open.spotify.com/playlist/37i9dQZF1DX2MyUCsl25eb?si=593853ab03954a09&nd=1",
-  image_url: '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX2MyUCsl25eb?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
+  image_url: '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX2MyUCsl25eb?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
 )
 playlist2.emoji = content
 playlist2.save
@@ -173,7 +173,7 @@ playlist2.save
 playlist3 = Playlist.new(
   title: "Mood Booster",
   url: "https://open.spotify.com/playlist/37i9dQZF1DX3rxVfibe1L0?si=5bdc022175cc43bf&nd=1",
-  image_url: '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX3rxVfibe1L0?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
+  image_url: '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX3rxVfibe1L0?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
 )
 playlist3.emoji = neutral
 playlist3.save
@@ -181,7 +181,7 @@ playlist3.save
 playlist4 = Playlist.new(
   title: "Rock This",
   url: "https://open.spotify.com/playlist/37i9dQZF1DXcF6B6QPhFDv?",
-  image_url: '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcF6B6QPhFDv?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
+  image_url: '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcF6B6QPhFDv?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
 )
 playlist4.emoji = sad
 playlist4.save
@@ -189,7 +189,7 @@ playlist4.save
 playlist5 = Playlist.new(
   title: "Beautiful Sad Songs",
   url: "https://open.spotify.com/playlist/6mGZqLAUce7VxRqIwIBpGm",
-  image_url: '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6mGZqLAUce7VxRqIwIBpGm?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
+  image_url: '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6mGZqLAUce7VxRqIwIBpGm?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
 )
 playlist5.emoji = terrible
 playlist5.save
@@ -197,7 +197,7 @@ playlist5.save
 playlist6 = Playlist.new(
   title: "Guilty Pleasures",
   url: "https://open.spotify.com/playlist/37i9dQZF1DX4pUKG1kS0Ac?si=739f288ac7524418&nd=1",
-  image_url: '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4pUKG1kS0Ac?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
+  image_url: '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4pUKG1kS0Ac?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
 )
 playlist6.emoji = happy
 playlist6.save
@@ -205,7 +205,7 @@ playlist6.save
 playlist7 = Playlist.new(
   title: "The ultimate feel good playlist",
   url: "https://open.spotify.com/playlist/2E6fOraA1wbcvsCxHL3F1E",
-  image_url: '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2E6fOraA1wbcvsCxHL3F1E?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
+  image_url: '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2E6fOraA1wbcvsCxHL3F1E?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
 )
 playlist7.emoji = content
 playlist7.save
@@ -213,7 +213,7 @@ playlist7.save
 playlist8 = Playlist.new(
   title: "Confidence Boost",
   url: "https://open.spotify.com/playlist/37i9dQZF1DX4fpCWaHOned?si=ks5UEPWzQniFB-cUF6p9pw&nd=1",
-  image_url: '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4fpCWaHOned?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
+  image_url: '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4fpCWaHOned?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
 )
 playlist8.emoji = neutral
 playlist8.save
@@ -221,7 +221,7 @@ playlist8.save
 playlist9 = Playlist.new(
   title: "Sad Songs",
   url: "https://open.spotify.com/playlist/37i9dQZF1DX7qK8ma5wgG1",
-  image_url: '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX7qK8ma5wgG1?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
+  image_url: '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX7qK8ma5wgG1?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
 )
 playlist9.emoji = sad
 playlist9.save
@@ -229,7 +229,7 @@ playlist9.save
 playlist10 = Playlist.new(
   title: "Sad Feeling",
   url: "https://open.spotify.com/playlist/619TOVyXFh6QmvWvESFGVp",
-  image_url: '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/619TOVyXFh6QmvWvESFGVp?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
+  image_url: '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/619TOVyXFh6QmvWvESFGVp?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
 )
 playlist10.emoji = terrible
 playlist10.save
@@ -237,7 +237,7 @@ playlist10.save
 playlist11 = Playlist.new(
   title: "The Ultimate Happy Playlist",
   url: "https://open.spotify.com/playlist/1llkez7kiZtBeOw5UjFlJq",
-  image_url: '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1llkez7kiZtBeOw5UjFlJq?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
+  image_url: '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1llkez7kiZtBeOw5UjFlJq?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
 )
 playlist11.emoji = happy
 playlist11.save
@@ -245,7 +245,7 @@ playlist11.save
 playlist12 = Playlist.new(
   title: "Feeling Good",
   url: "https://open.spotify.com/playlist/37i9dQZF1DX7xOpGPUVNE5",
-  image_url: '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX7xOpGPUVNE5?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
+  image_url: '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX7xOpGPUVNE5?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
 )
 playlist12.emoji = content
 playlist12.save
@@ -253,7 +253,7 @@ playlist12.save
 playlist13 = Playlist.new(
   title: "Songs to Sing in the Shower",
   url: "https://open.spotify.com/playlist/37i9dQZF1DWSqmBTGDYngZ?si=ak-dOzw_Rc-I2MesqTCmLg&nd=1",
-  image_url: '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DWSqmBTGDYngZ?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
+  image_url: '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DWSqmBTGDYngZ?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
 )
 playlist13.emoji = neutral
 playlist13.save
@@ -261,7 +261,7 @@ playlist13.save
 playlist14 = Playlist.new(
   title: "sad 2023",
   url: "https://open.spotify.com/playlist/37i9dQZF1DWZqdNJSufucb",
-  image_url: '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DWZqdNJSufucb?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
+  image_url: '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DWZqdNJSufucb?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
 )
 playlist14.emoji = sad
 playlist14.save
@@ -269,7 +269,7 @@ playlist14.save
 playlist15 = Playlist.new(
   title: "Sad Songs 🥺",
   url: "https://open.spotify.com/playlist/6nxPNnmSE0d5WlplUsa5L3",
-  image_url: '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6nxPNnmSE0d5WlplUsa5L3?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
+  image_url: '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6nxPNnmSE0d5WlplUsa5L3?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
 )
 playlist15.emoji = terrible
 playlist15.save

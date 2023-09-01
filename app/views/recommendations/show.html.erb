@@ -1,5 +1,10 @@
-<h1>
-Hi from the recommendations show!
-</h1>
-RECOMMENDATION:
-<%= @recommendation %>
+<div class="home-container home-bg spacer">
+  <div class="container">
+    <h1 class="mb-4">Today's music suggestions:</h1>
+    <% @recommendations.each do |recommendation| %>
+      <div class="p-3">
+      <%= recommendation.image_url.html_safe %>
+      </div>
+    <% end %>
+  </div>
+</div>

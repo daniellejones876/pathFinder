@@ -1,9 +1,4 @@
 class RecommendationsController < ApplicationController
-  def show
-    @logbook = Logbook.find(params[:logbook_id])
-    @recommendation = @logbook.emoji.playlists.sample.title
-  end
-
   def create
     @logbook = Logbook.find(params[:id])
     @recommendation = Recommendation.new
@@ -11,5 +6,10 @@ class RecommendationsController < ApplicationController
     @recommendation.logbook.emoji = @logbook.emoji
 
     @recommendation.save
+  end
+
+  def show
+    @logbook = Logbook.find(params[:logbook_id])
+    @recommendations = @logbook.emoji.playlists
   end
 end
