@@ -5,26 +5,37 @@
   align-items: center;
   text-align: center;
   min-height: 390px;
-  padding-top: 300px;
+  padding-top: 350px;
   background: #CCDBDC;
   h1 {
     color: #02394A;
+    font-weight: 600;
   }
 
   p {
     color: #02394A;
+    line-height: 20px;
   }
 }
-.spacer {
+.landing-bg-image{
   width: 100%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   z-index: 10;
-  background-color: rgba(204, 219, 220, 0.2);
+  background-image: asset-url('backgrounds/landing_page.png');
 }
 
-
+.landing-welcome {
+  background-color: rgba(204, 219, 220, 0.4);
+  border-radius: 30px;
+  font-weight: 500;
+  transform: translateY(-35%);
+  z-index: 2;
+  width: 90%;
+  padding: 20px;
+  text-align: center;
+}
 .blob {
   position: absolute;
   width: 250px;
@@ -35,23 +46,9 @@
 
 .blob:nth-child(2) {
   filter: blur(30px);
-  transform: translateY(20%);
-}
-
-.layer1 {
-  background-image: asset-url('backgrounds/landing_page.png');
+  transform: translateY(10%);
 }
 
 .layer2 {
   background-image: asset-url('backgrounds/emoji.png');
 }
-
-.layer3 {
-  background-image: asset-url('backgrounds/image.png');
-}
-
-.layer4 {
-  background-image: asset-url('backgrounds/journal.png');
-}
-
-// Specific CSS for your home-page
