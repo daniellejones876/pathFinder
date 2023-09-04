@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_04_081839) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_04_122047) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +42,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_04_081839) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "books", force: :cascade do |t|
+    t.string "title"
+    t.string "author"
+    t.string "description"
+    t.string "url"
+    t.string "image_url"
+    t.bigint "emoji_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["emoji_id"], name: "index_books_on_emoji_id"
+  end
+
   create_table "emojis", force: :cascade do |t|
     t.string "title"
     t.string "image"
@@ -57,6 +69,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_04_081839) do
     t.bigint "prompt_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.time "time"
     t.index ["logbook_id"], name: "index_journals_on_logbook_id"
     t.index ["prompt_id"], name: "index_journals_on_prompt_id"
   end
@@ -68,6 +81,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_04_081839) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.time "time"
     t.index ["emoji_id"], name: "index_logbooks_on_emoji_id"
     t.index ["user_id"], name: "index_logbooks_on_user_id"
   end
@@ -93,6 +107,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_04_081839) do
     t.string "playlist_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "book_id"
+    t.index ["book_id"], name: "index_recommendations_on_book_id"
     t.index ["logbook_id"], name: "index_recommendations_on_logbook_id"
   end
 
@@ -112,10 +128,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_04_081839) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "books", "emojis"
   add_foreign_key "journals", "logbooks"
   add_foreign_key "journals", "prompts"
   add_foreign_key "logbooks", "emojis"
   add_foreign_key "logbooks", "users"
   add_foreign_key "playlists", "emojis"
+  add_foreign_key "recommendations", "books"
   add_foreign_key "recommendations", "logbooks"
 end

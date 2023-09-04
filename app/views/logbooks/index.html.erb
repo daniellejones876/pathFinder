@@ -9,9 +9,9 @@
           <%= link_to logbook_path(logbook) do %>
             <div class="card my-5 rounded border-0 shadow-sm">
               <div style = "font-weight: lighter;">
-                <%= logbook.created_at.strftime("%d %b, %Y") %>, <%= logbook.created_at.strftime("%I:%M %p") %>
+                <%= logbook.date.strftime("%d %b, %Y") if logbook.date %>
               </div>
-              <%= logbook.summary.truncate(50) if logbook.summary %>
+              <%= logbook.summary.truncate(90) if logbook.summary %>
           </div>
           <% end %>
         <% end %>

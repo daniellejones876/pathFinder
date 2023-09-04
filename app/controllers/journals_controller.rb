@@ -10,6 +10,8 @@ class JournalsController < ApplicationController
   def create
     @journal = Journal.new(journal_params)
     @journal.logbook = @logbook
+    @journal.date = Date.today
+    @journal.time = Time.now
 
     if @journal.save
       redirect_to logbook_path(@journal.logbook), notice: 'Journal was successfully created.'

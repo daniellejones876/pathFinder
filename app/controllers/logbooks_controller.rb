@@ -2,7 +2,7 @@ class LogbooksController < ApplicationController
   before_action :set_logbook, only: %i[show edit update destroy]
 
   def index
-    @logbooks = Logbook.where(user: current_user)
+    @logbooks = Logbook.where(user: current_user).order("date DESC")
   end
 
   def show; end
@@ -14,6 +14,8 @@ class LogbooksController < ApplicationController
   def create
     @logbook = Logbook.new(logbook_params)
     @logbook.user = current_user
+    @logbook.date = Date.today
+    @logbook.time = Time.now
 
     if @logbook.save
       redirect_to edit_logbook_path(@logbook), notice: 'Log was successfully created.'
@@ -26,12 +28,15 @@ class LogbooksController < ApplicationController
 
   def update
     if @logbook.update(logbook_params)
+      if params[:submit] == 'Book recommendation'
+        redirect_to logbook_book_path(@logbook)
+      elsif params[:submit] == 'Playlist recommendation'
+        redirect_to logbook_playlist_path(@logbook)
+      end
       recommendations_controller = RecommendationsController.new
       recommendations_controller.request = request
       recommendations_controller.response = response
       recommendations_controller.create
-
-      redirect_to logbook_recommendation_path(@logbook), notice: 'Log was successfully updated.', status: :see_other
     else
       render :edit, status: :unprocessable_entity
     end

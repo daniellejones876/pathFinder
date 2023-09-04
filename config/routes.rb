@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   resources :logbooks do
     resources :recommendations, only: %i[show]
+    resources :playlists, only: %i[show]
+    resources :books, only: %i[show]
     resources :journals, only: %i[new create edit update]
 
     collection do

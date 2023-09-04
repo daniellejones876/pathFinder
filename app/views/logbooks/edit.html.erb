@@ -9,11 +9,11 @@
         <%= f.input :summary, label: "Today's note" %>
         <%= f.input :image, as: :file, label: "Today's photo" %>
         <%= f.association :user, as: :hidden, input_html: { value: current_user.id }  %>
-
       </div>
 
       <div class="form-actions">
-        <%= f.submit 'Done', class: "btn btn-outline-secondary" %>
+        <%= submit_tag 'Book recommendation', name: 'submit', class: "btn btn-outline-secondary" %>
+        <%= submit_tag 'Playlist recommendation', name: 'submit', class: "btn btn-outline-secondary" %>
       </div>
     <% end %>
   </div>
