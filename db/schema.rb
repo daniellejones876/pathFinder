@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_04_122047) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_04_162654) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -103,7 +103,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_04_122047) do
   end
 
   create_table "recommendations", force: :cascade do |t|
-    t.bigint "logbook_id", null: false
+    t.bigint "logbook_id"
     t.string "playlist_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

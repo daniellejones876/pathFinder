@@ -5,5 +5,5 @@ class Logbook < ApplicationRecord
   belongs_to :user
 
   has_many :journals, dependent: :destroy
-  has_one :recommendation, dependent: :destroy
+  has_one :recommendation
 end
