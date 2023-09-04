@@ -9,11 +9,12 @@
         <h5><%= f.input :summary, label: "Today's note" %></h5>
         <h5><%= f.input :image, as: :file, label: "Today's photo" %></h5>
         <%= f.association :user, as: :hidden, input_html: { value: current_user.id }  %>
-
       </div>
 
       <div class="form-actions">
-        <%= f.submit 'Done', class: "btn btn-secondary rounded" %>
+
+        <%= submit_tag 'Book recommendation', name: 'submit', class: "btn btn-secondary rounded" %>
+        <%= submit_tag 'Playlist recommendation', name: 'submit', class: "btn btn-secondary rounded" %>
       </div>
     <% end %>
   </div>

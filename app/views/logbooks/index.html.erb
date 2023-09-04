@@ -7,7 +7,7 @@
           <%= link_to logbook_path(logbook) do %>
             <div class="journal-card">
               <div style = "font-weight: lighter;">
-                <%= logbook.created_at.strftime("%d %b, %Y") %>, <%= logbook.created_at.strftime("%I:%M %p") %>
+                <%= logbook.date.strftime("%d %b, %Y") if logbook.date %>
                 <br>
                 <em><%= logbook.emoji.title %></em>
                 <%= logbook.emoji.image.html_safe %>
