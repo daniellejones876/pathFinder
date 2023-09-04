@@ -1,0 +1,23 @@
+.logbook-container {
+  background-color: #ccdbdc;
+  border-radius: 100px;
+  width: 100%;
+  padding: 20px;
+  position:absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 100px;
+}
+
+.layer3 {
+  background-image: asset-url('backgrounds/journal.png');
+  padding-top: 10px;
+}
+
+.journal-card {
+  margin: 10px;
+  padding: 45px;
+  background-color: rgba(157, 177, 222, 0.4);
+  border-radius: 100px;
+  color: #02394A;
+}
