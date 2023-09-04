@@ -13,9 +13,7 @@
                 <%= logbook.emoji.image.html_safe %>
               </div>
               <%= logbook.summary %>
-              <div class="rounded">
-                <%= cl_image_tag logbook.image.key, class:"card-img-top", crop: :fill if logbook.image.attached?%>
-              </div>
+              <%= cl_image_tag logbook.image.key, class:"card-img-top journal-image", crop: :fill if logbook.image.attached?%>
           </div>
           <% end %>
         <% end %>
