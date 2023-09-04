@@ -6,7 +6,7 @@
     <% @recommendations.each do |recommendation| %>
       <%= link_to recommendation.url do %>
         <div class="card-product m-3">
-          <%= cl_image_tag(recommendation.image_url.html_safe) %>
+          <%= image_tag(recommendation.image_url.html_safe) %>
           <div class="card-product-infos">
             <h2><%= recommendation.title %></h2>
             <p><%= recommendation.author %></p>
