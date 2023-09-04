@@ -1,27 +1,34 @@
-<div class="container mt-3">
+<div class="container mt-5 text-center">
   <h1>Hi <%= current_user.first_name %>.</h1>
 
-  <%= link_to "Homepage", home_path %>
-
-  Your Statistical history:
   <div data-controller="profile">
-    <div class="container my-5 text-center">
-      <div class="btn-group" role="group" aria-label="Basic outlined example">
-        <button type="button" class="btn btn-outline-primary" data-action="click->profile#showChart" data-profile-target="weeklyBtn" disabled>Weekly</button>
-        <button type="button" class="btn btn-outline-primary" data-action="click->profile#showCalendar" data-profile-target="monthlyBtn">Monthly</button>
+    <div class="option-button">   
+      <div class="container my-5 text-center">
+        <div class="btn-group" role="group" aria-label="Basic outlined example">
+          <button type="button" class="btn btn-outline-primary" data-action="click->profile#showChart" data-profile-target="weeklyBtn" disabled>Weekly</button>
+          <button type="button" class="btn btn-outline-primary" data-action="click->profile#showCalendar" data-profile-target="monthlyBtn">Monthly</button>
+        </div>
       </div>
     </div>
 
-    <div class="container my-5 text-center d-none" data-profile-target="calendar">
+    <div class="container my-3 text-center d-none" data-profile-target="calendar">
+      <div class="class">
+        <p>Monthly Log Calendar:</p>
+      </div>
       <%= month_calendar do |date| %>
-        <%= link_to date_logbooks_path(date) do %>
-          <%= date.day %>
-        <% end %>
+        <% if @logbooks.select { |logbook| logbook[:created_at].to_date == date } != [] %>
+          <%= link_to date_logbooks_path(date) do %>
+            <div class="link_date"><%= date.day %></div>
+          <% end %>
+        <% else %>
+        <%= date.day %>
+         <% end %>
       <% end %>
     </div>
 
     <div class="chart mb-5" data-profile-target="chart">
-      <%= area_chart Emoji.group_by_day_of_week(:created_at,format: "%a").maximum(:value) %>
+      <p>Weekly Mood Check:</p>
+        <%= area_chart Emoji.group_by_day_of_week(:created_at,format: "%a").maximum(:value) %>
     </div>
   </div>
 </div>
