@@ -1,24 +1,37 @@
-Today, <%= Date.today.strftime("%d %b, %Y") %>
+<div class="h-container home-bg spacer">
+  <div class="container mt-5">
 
-<%= simple_form_for [@logbook, @journal] do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    Today, <%= Date.today.strftime("%d %b, %Y") %>
 
-  <div data-controller="shuffle-prompt">
-    <div class="form-inputs">
-      <p data-shuffle-prompt-target="prompt"><%= @sample_prompt.content %></p>
-      <%= f.input :prompt_id, as: :hidden, input_html: { value: @sample_prompt.id, data: {shuffle_prompt_target: "promptInput" } } %>
-      <button data-action="click->shuffle-prompt#shuffle", class="btn btn-outline-secondary mb-5" >
-        <i class="fa-solid fa-shuffle"></i> New prompt
-      </button>
-      <button data-action="click->shuffle-prompt#clear", class="btn btn-outline-secondary mb-5" >
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-      <%= f.input :content, label: "Write here" %>
-    </div>
+    <%= simple_form_for [@logbook, @journal] do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+      <div data-controller="shuffle-prompt">
+        <div class="form-inputs">
+          <div style="height: 4rem">
+            <p data-shuffle-prompt-target="prompt"><%= @sample_prompt.content %></p>
+          </div>
+          <%= f.input :prompt_id, as: :hidden, input_html: { value: @sample_prompt.id, data: {shuffle_prompt_target: "promptInput" } } %>
+          <div class="d-flex">
+            <div>
+              <button data-action="click->shuffle-prompt#shuffle", class="btn btn-outline-secondary mb-5" >
+                <i class="fa-solid fa-shuffle"></i> New prompt
+              </button>
+            </div>
+            <div class="px-2">
+              <button data-action="click->shuffle-prompt#clear", class="btn btn-outline-secondary mb-5" >
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+          </div>
+          <%= f.input :content, label: "Write here" %>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <%= f.submit 'Save', class: "btn btn-outline-secondary" %>
+      </div>
+    <% end %>
   </div>
-
-  <div class="form-actions">
-    <%= f.submit 'Save', class: "btn btn-outline-secondary" %>
-  </div>
-<% end %>
+</div>

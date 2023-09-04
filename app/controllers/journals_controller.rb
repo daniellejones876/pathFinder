@@ -1,15 +1,13 @@
 class JournalsController < ApplicationController
+  before_action :set_logbook, only: %i[new create edit update]
   before_action :set_journal, only: %i[edit update]
-  before_action :set_logbook, only: %i[edit update]
 
   def new
     @journal = Journal.new
     @sample_prompt = Prompt.all.sample
-    @logbook = Logbook.find(params[:logbook_id])
   end
 
   def create
-    @logbook = Logbook.find(params[:logbook_id])
     @journal = Journal.new(journal_params)
     @journal.logbook = @logbook
 
@@ -20,8 +18,7 @@ class JournalsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @journal.update(journal_params)
