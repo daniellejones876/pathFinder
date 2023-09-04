@@ -39,19 +39,20 @@ puts "Users created!"
 puts "Creating emojis..."
 
 
-happy = Emoji.new(title: "Happy", image: "<i class='fa-solid fa-face-smile-beam' style='color: #ccdbdc;'></i>", value: 5)
+happy = Emoji.new(title: "Happy", image: "<i class='fa-solid fa-face-smile-beam' style='color: #9DB1DE;'></i>", value: 5)
 happy.save
 
-content = Emoji.new(title: "Content", image: "<i class='fa-solid fa-face-smile' style='color: #ccdbdc;'></i>", value: 4)
+content = Emoji.new(title: "Content", image: "<i class='fa-solid fa-face-smile' style='color: #9DB1DE;'></i>", value: 4)
 content.save
 
-apathetic = Emoji.new(title: "Apathetic", image: "<i class='fa-solid fa-face-meh' style='color: #ccdbdc;'></i>", value: 3)
+
+apathetic = Emoji.new(title: "Apathetic", image: "<i class='fa-solid fa-face-meh' style='color: #9DB1DE;'></i>", value: 3)
 apathetic.save
 
-sad = Emoji.new(title: "Sad", image: "<i class='fa-solid fa-face-frown-open' style='color: #ccdbdc;'></i>", value: 2)
+sad = Emoji.new(title: "Sad", image: "<i class='fa-solid fa-face-frown-open' style='color: #9DB1DE;'></i>", value: 2)
 sad.save
 
-terrible = Emoji.new(title: "Terrible", image: "<i class='fa-solid fa-face-frown' style='color: #ccdbdc;'></i>", value: 1)
+terrible = Emoji.new(title: "Terrible", image: "<i class='fa-solid fa-face-frown' style='color: #9DB1DE;'></i>", value: 1)
 terrible.save
 
 puts "Emojis created!"

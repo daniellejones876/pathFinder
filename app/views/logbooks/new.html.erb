@@ -1,17 +1,17 @@
 
 <div class="h-container layer2">
-  <div class="container mt-5">
+  <div class="mood-check">
     <%= simple_form_for(@logbook) do |f| %>
       <%= f.error_notification %>
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
       <div class="form-inputs">
-        <%= f.association :emoji, label: "How was your day?" %>
+        <h3><%= f.association :emoji, label: "How was your day?" %></h3>
         <%= f.association :user, as: :hidden, input_html: { value: current_user.id }  %>
       </div>
 
       <div class="form-actions">
-        <%= f.submit 'Next', class: "btn btn-outline-secondary" %>
+        <%= f.submit 'Next', class: "btn btn-secondary" %>
       </div>
     <% end %>
   </div>
