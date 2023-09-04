@@ -1,17 +1,21 @@
-<div class="h-container home-bg spacer">
-  <div class="container mt-5">
-    <h1 class="text-center">
-      Your path
-    </h1>
-    <div class="container">
-      <div class="">
+<div class="h-container layer3">
+  <div class="text-center mt-5">
+    <h1>Your path</h1>
+  </div>
+  <div class="logbook-container">
         <% @logbooks.each do |logbook| %>
           <%= link_to logbook_path(logbook) do %>
-            <div class="card my-5 rounded border-0 shadow-sm">
+            <div class="journal-card">
               <div style = "font-weight: lighter;">
                 <%= logbook.created_at.strftime("%d %b, %Y") %>, <%= logbook.created_at.strftime("%I:%M %p") %>
+                <br>
+                <em><%= logbook.emoji.title %></em>
+                <%= logbook.emoji.image.html_safe %>
               </div>
-              <%= logbook.summary.truncate(50) if logbook.summary %>
+              <%= logbook.summary %>
+              <div class="rounded">
+                <%= cl_image_tag logbook.image.key, class:"card-img-top", crop: :fill if logbook.image.attached?%>
+              </div>
           </div>
           <% end %>
         <% end %>
