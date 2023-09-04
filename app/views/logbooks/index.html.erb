@@ -11,7 +11,7 @@
               <div style = "font-weight: lighter;">
                 <%= logbook.created_at.strftime("%d %b, %Y") %>, <%= logbook.created_at.strftime("%I:%M %p") %>
               </div>
-              <%= logbook.summary.truncate(50) %>
+              <%= logbook.summary.truncate(50) if logbook.summary %>
           </div>
           <% end %>
         <% end %>

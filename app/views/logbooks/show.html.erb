@@ -17,7 +17,7 @@
         <% @logbook.journals.each do |journal| %>
           <li>
           Journal entry at <%= journal.created_at.strftime("%I:%M %p") %>:
-          <%= journal.prompt.content %>
+          <%= journal.prompt.content if journal.prompt %>
           <%= journal.content %>
           <%= link_to "Edit journal", edit_logbook_journal_path(@logbook, journal) %>
           </li>

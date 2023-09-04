@@ -11,6 +11,7 @@ export default class extends Controller {
     this.promptInputTarget.value = ""
     this.promptTarget.classList.add("d-none")
     this.promptInputTarget.classList.add("d-none")
+    this.promptTarget.dataset.promptId = null
   }
 
   shuffle(event) {
