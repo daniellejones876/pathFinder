@@ -1,19 +1,19 @@
 <div class="h-container layer2">
-  <div class="container mt-5">
+  <div class="mood-check">
     <%= simple_form_for(@logbook) do |f| %>
       <%= f.error_notification %>
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
       <div class="form-inputs">
-        <%= f.association :emoji, label: "How was your day?" %>
-        <%= f.input :summary, label: "Today's note" %>
-        <%= f.input :image, as: :file, label: "Today's photo" %>
+        <h3><%= f.association :emoji, label: "How was your day?" %></h3>
+        <h5><%= f.input :summary, label: "Today's note" %></h5>
+        <h5><%= f.input :image, as: :file, label: "Today's photo" %></h5>
         <%= f.association :user, as: :hidden, input_html: { value: current_user.id }  %>
 
       </div>
 
       <div class="form-actions">
-        <%= f.submit 'Done', class: "btn btn-outline-secondary" %>
+        <%= f.submit 'Done', class: "btn btn-secondary rounded" %>
       </div>
     <% end %>
   </div>

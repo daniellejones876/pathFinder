@@ -1,32 +1,6 @@
-// Specific CSS for your home-page
-// .home-container {
-//   position: relative;
-//   display: flex;
-//   flex-direction: column;
-//   min-height: 100vh;
-//   padding-top: 180px;
-//   background: #CCDBDC;
-//   h1 {
-//     color: #02394A;
-//   }
-
-//   p {
-//     color: #02394A;
-//   }
-// }
-
-// .container-blur {
-//   background-color: rgba(204, 219, 220, 0.5);
-// }
-
-// img {
-  //   -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
-  //   filter: blur(5px);
-  // }
-
-  .home-bg {
-    background-image: asset-url('backgrounds/home.png');
-  }
+.home-bg {
+  background-image: asset-url('backgrounds/home.png');
+}
 
 .wrap {
   display: flex;
@@ -36,8 +10,8 @@
 }
 
 .h-container {
-  width: 375px;
-  height: 680px;
+  width: 100vw;
+  height: 844px;
   margin: auto;
   border-radius: 30px;
   background-repeat: no-repeat;
