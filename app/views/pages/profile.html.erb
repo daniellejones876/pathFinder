@@ -2,7 +2,7 @@
   <h1>Hi <%= current_user.first_name %>.</h1>
 
   <div data-controller="profile">
-    <div class="option-button">   
+    <div class="option-button">
       <div class="container my-5 text-center">
         <div class="btn-group" role="group" aria-label="Basic outlined example">
           <button type="button" class="btn btn-outline-primary" data-action="click->profile#showChart" data-profile-target="weeklyBtn" disabled>Weekly</button>
@@ -26,12 +26,18 @@
       <% end %>
     </div>
 
-    <div class="chart mb-5" data-profile-target="chart">
-      <p>Weekly Mood Check:</p>
-        <%= area_chart Emoji.group_by_day_of_week(:created_at,format: "%a").maximum(:value) %>
-    </div>
+
+    <canvas data-controller="profile-chart" id="chart" data-profile-target="chart"></canvas>
   </div>
 </div>
+
+
+
+
+
+
+
+
 
 <%# <% @logbooks.each do |logbook| %>
   <%# <%= logbook.emoji.value %>

@@ -1,40 +1,54 @@
 import { Controller } from "@hotwired/stimulus"
+fetch
 
 // Connects to data-controller="profile-chart"
 export default class extends Controller {
   connect() {
+    const url = window.location.origin + "/graph-data"
+    fetch(url, {
+      headers: { "Accept": " application/json"}
+    })
+    .then(response => response.json())
+    .then(dataReceived => {
+      console.log(dataReceived)
+      const monday = dataReceived.data.Mon
+      const tuesday = dataReceived.data.Tue
+      const wednesday = dataReceived.data.Wed
+      const thursday = dataReceived.data.Thu
+      const friday = dataReceived.data.Fri
+      const saturday = dataReceived.data.Sat
+      const sunday = dataReceived.data.Sun
+
+      const showData = {
+        labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        datasets: [{
+            data: [monday, tuesday, wednesday, thursday, friday, saturday, sunday],
+            backgroundColor: 'rgba(75, 192, 192, 0.2)', // Fill color
+            borderColor: 'rgba(75, 192, 192, 1)', // Line color
+            borderWidth: 2
+        }]
+      };
+
+      const options = {
+        scales: {
+          y: {
+            ticks: {
+              callback: function (value, index, values) {
+                var customTicks = ['😭', '😟', '😐', '🙂', '😁'];
+                return customTicks[index];
+              },
+            },
+          },
+        },
+      };
+
+      // Get the canvas element and create the line chart
+      const ctx = document.getElementById('chart').getContext('2d');
+      const myLineChart = new Chart(ctx, {
+          type: 'line',
+          data: showData,
+          options: options
+      });
+      })
   }
 }
-
-
-<div class="container">
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.js" integrity="sha512-6LKCH7i2+zMNczKuCT9ciXgFCKFp3MevWTZUXDlk7azIYZ2wF5LRsrwZqO7Flt00enUI+HwzzT5uhOvy6MNPiA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-  <div style="width: 900px; height: 400px;">
-    <canvas id="myChart"></canvas>
-  </div>
-
-  <script>
-
-    let labels = ['Mon', 'Tue', 'Wed', 'Thu', "Fri", 'Sat', 'Sun'];
-
-    let itemData = [1, 2, 3, 4, 5, 6, 7];
-
-    const data = {
-      labels: labels,
-      datasets: [{
-        data: itemData,
-        backgroundColor: 'rgb(180, 154, 204)'
-      }]
-    };
-    const config = {
-      type: 'line',
-      data: data
-    };
-    const chart = new Chart(
-      document.getElementById('myChart'),
-      config
-    );
-  </script>
-</div>
