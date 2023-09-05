@@ -45,7 +45,6 @@ happy.save
 content = Emoji.new(title: "Content", image: "<i class='fa-solid fa-face-smile' style='color: #9DB1DE;'></i>", value: 4)
 content.save
 
-
 apathetic = Emoji.new(title: "Apathetic", image: "<i class='fa-solid fa-face-meh' style='color: #9DB1DE;'></i>", value: 3)
 apathetic.save
 
