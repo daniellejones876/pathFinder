@@ -1,17 +1,21 @@
-
 <div class="h-container layer2">
   <div class="mood-check">
-    <%= simple_form_for(@logbook) do |f| %>
+    <div>
+      <h3>How was your day?</h3>
+    </div>
+      <%= simple_form_for(@logbook) do |f| %>
       <%= f.error_notification %>
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-      <div class="form-inputs">
-        <h3><%= f.association :emoji, label: "How was your day?" %></h3>
-        <%= f.association :user, as: :hidden, input_html: { value: current_user.id }  %>
+      <div class="d-flex justify-content-between">
+        <% Emoji.all.each do |emoticon| %>
+          <%= f.label :emoji_id, emoticon.title do %>
+          <%= f.radio_button :emoji_id, emoticon.id %>
+          <h1><%= emoticon.image.html_safe %></h1>
+          <% end %>
+        <% end %>
       </div>
-
-      <div class="form-actions">
-        <%= f.submit 'Next', class: "btn btn-secondary" %>
+      <div class="d-flex justify-content-end mt-3">
+          <%= f.submit 'Next', class: "btn btn-secondary" %>
       </div>
     <% end %>
   </div>

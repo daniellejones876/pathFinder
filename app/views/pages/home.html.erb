@@ -2,7 +2,7 @@
   <div class="h-container home-bg">
     <header class="top">
     <h1 class="top">Welcome, <%= current_user.first_name %> 💜</h1>
-      <time datetime="01-09-2023">01 September, 2023</time>
+    <%= Date.today.strftime("%d of %B, %Y") %>
 
     </header>
     <div class="notification">

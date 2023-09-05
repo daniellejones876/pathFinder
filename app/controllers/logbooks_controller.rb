@@ -42,11 +42,6 @@ class LogbooksController < ApplicationController
     end
   end
 
-  def destroy
-    @logbook.destroy
-    redirect_to logbooks_path, notice: 'Log was successfully destroyed.'
-  end
-
   def date
     @date = Date.parse(params[:date])
 

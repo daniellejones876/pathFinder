@@ -15,9 +15,6 @@
       <%= journal.content %>
       <%= link_to "Edit journal", edit_logbook_journal_path(@logbook, journal) %>
     <% end %>
-    <div class="d-flex justify-content-between pt-2">
-      <%= link_to "Update", edit_logbook_path(@logbook) %>
-      <%= link_to "Delete", logbook_path(@logbook), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this log?" } %>
-    </div>
+    <%= link_to "Update", edit_logbook_path(@logbook) %>
   </div>
 </div>
