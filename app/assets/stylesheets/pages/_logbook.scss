@@ -10,18 +10,44 @@
 }
 
 .layer3 {
-  background-image: asset-url('backgrounds/journal.png');
+  background-image: asset-url('backgrounds/logbook.png');
   padding-top: 75px;
 }
 
 .journal-card {
-  margin: 10px;
+  margin: 12px;
   padding: 45px;
   background-color: rgba(157, 177, 222, 0.4);
   border-radius: 100px;
   color: #02394A;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 
 .journal-image {
   border-radius: 25px;
+  margin-top: 12px;
+}
+
+.layer4 {
+  background-image: asset-url('backgrounds/journal.png')
+}
+
+.journal-entry {
+  background-color: rgba(157, 177, 222, 0.4);
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  border-radius: 30px;
+  width: 90%;
+  padding: 20px;
+  position:absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 100px;
+}
+
+.journal-header {
+  text-align: center;
+  padding-top: 100px;
+  h3 {
+    font-weight: 400;
+  }
 }
