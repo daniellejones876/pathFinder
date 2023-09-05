@@ -13,15 +13,17 @@
   <div class="journal-entry">
     <h5><%= @logbook.emoji.title %></h5>
     <%= @logbook.emoji.image.html_safe %>
-    <br>
-    <%= @logbook.summary %>
+    <p><%= @logbook.summary %></p>
     <%= cl_image_tag(@logbook.image.key, class:"card-img-top journal-image", crop: :fill) if @logbook.image.attached? %>
+    <br>
     <% @logbook.journals.each do |journal| %>
       Journal entry at <%= journal.created_at.strftime("%I:%M %p") %>:
-      <%= journal.prompt.content if journal.prompt %>
-      <%= journal.content %>
+      <p><%= journal.prompt.content if journal.prompt %></p>
+      <p><%= journal.content %></p>
+      <div class="d-flex justify-content-between">
       <%= link_to "Edit journal", edit_logbook_journal_path(@logbook, journal) %>
     <% end %>
     <%= link_to "Update", edit_logbook_path(@logbook) %>
+    </div>
   </div>
 </div>
