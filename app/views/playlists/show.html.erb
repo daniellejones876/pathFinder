@@ -1,11 +1,13 @@
-<div class="h-container home-bg spacer">
+<div class="h-container layer-recommendation">
   <div class="container mt-5">
-    <h1 class="mb-4">Today's music suggestions:</h1>
-    <%= @logbook.emoji.title %>
-    <%= @logbook.emoji.image.html_safe %>
+    <div class="recommendations-header mb-4">
+      <h1 class="mb-4">Playlists of the hour:</h1>
+      <p>since you're feeling <em><%= @logbook.emoji.title %></em></p>
+      <p><em>you're doing great by staying in touch with your feelings </em></p>
+    </div>
     <% @recommendations.each do |recommendation| %>
-      <div class="p-3">
-      <%= recommendation.image_url.html_safe %>
+      <div class="p-2">
+        <%= recommendation.image_url.html_safe %>
       </div>
     <% end %>
   </div>

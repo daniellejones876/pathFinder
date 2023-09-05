@@ -1,75 +1,66 @@
 <div class="wrap">
   <div class="h-container home-bg">
     <header class="top">
-    <h1 class="top">Welcome, <%= current_user.first_name %> 💜</h1>
-    <%= Date.today.strftime("%d of %B, %Y") %>
-
+      <h1>Welcome, <%= current_user.first_name %> 💜</h1>
+      <%= Date.today.strftime("%d of %B, %Y") %>
+      <p><em>Chi va piano, va sano e va lontano</em></p>
+      <p>"Who goes slowly, goes safely and goes far."</p>
     </header>
-    <div class="notification">
-      <p>
-        <strong>
-          <i class="fa-solid fa-bell" style="color: #02394a;"></i>
-          Activities Today:
-        </strong>
-        Meditation and Relaxation
-      </p>
-      <small>8:00pm</small>
-    </div>
-    <div class="container mx-4 mt-3">
-      <p>Chi va piano, va sano e va lontano "Who goes slowly, goes safely and goes far."</p>
-    </div>
-    <section class="content">
-      <h2 class="heading">What do you need today?</h2>
-      <div class="slides">
-      <article class="article">
-      <img src="http://co0kie.github.io/codepen/mindful/buddhist-yoga-pose.svg" alt="">
-        <div class="text">
-          <h6>Meditation Zen</h6>
-          <p>Recommended in the morning</p>
-        </div>
-      </article>
-      </div>
-    </section>
-  <div class="container">
-    <h5>Recommendations</h5>
-  </div>
 
-  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-    <div class="carousel-item active" style="height:200px">
-      <img src="https://images.unsplash.com/photo-1538045698727-ac45d4365100?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80" class="d-block w-100" alt="">
-      <div class="carousel-caption d-md-block">
-        <h5>Journal</h5>
-        <p>Record your thoughts ✐</p>
+    <div class="favorites-container">
+      <h2>What do you need today?</h2>
+      <div class="notification-lg">
+        <p>
+          <strong>
+            <i class="fa-solid fa-bell" style="color: #02394a;"></i>
+            Activities Today:
+          </strong>
+            Meditation and Relaxation
+        </p>
+        <small>8:00pm</small>
+      </div>
+    
+      <div class="notification-sm">
+        <p>
+            <img src="http://co0kie.github.io/codepen/mindful/buddhist-yoga-pose.svg" alt="">
+            Mindful Yoga
+        </p>
+      </div>
+
+      <div class="notification-sm">
+        <p>
+            <img src="http://co0kie.github.io/codepen/mindful/buddhist-yoga-pose.svg" alt="">
+            Mindful Yoga
+        </p>
+      </div>
+
+      <div class="notification-sm">
+        <p>
+          <strong>
+            <i class="fa-solid fa-bell" style="color: #02394a;"></i>
+            Activities Today:
+          </strong>
+            Meditation and Relaxation
+        </p>
+        <small>8:00pm</small>
       </div>
     </div>
-    <div class="carousel-item" style="height:200px">
-      <img src="https://images.unsplash.com/photo-1604313477128-4e121c72c5ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2874&q=80" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-md-block">
-        <h5>Listen</h5>
-        <p>Open your mind to the world of sound 🎶</p>
-      </div>
+
+<!--Waves Container-->
+    <div>
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+          <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+          <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+          <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+        </g>
+      </svg>
     </div>
-    <div class="carousel-item" style="height:200px">
-      <img src="https://images.unsplash.com/photo-1544716278-e513176f20b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2874&q=80" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-md-block">
-        <h5>Book Library</h5>
-        <p>Explore the world of prose and poetry at your fingertips 📚</p>
-      </div>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
+<!--Waves end-->
   </div>
 </div>

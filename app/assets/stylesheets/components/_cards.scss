@@ -1,7 +1,7 @@
 .card-product {
   overflow: hidden;
-  height: 155px;
-  background: rgb(250, 255, 237);
+  height: 175px;
+  background: rgba(250, 255, 237, 0.85);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
@@ -18,7 +18,7 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
-  color: black;
+  color: #02394A;
 }
 
 .card-product p {
@@ -36,7 +36,7 @@
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
-  color: black;
+  color: #02394A;
 }
 
 .card-product .card-product-infos {
