@@ -4,19 +4,31 @@
       <p>Take a moment to reflect on your mood</p>
       <h3>How was your day?</h3>
     </div>
-      <%= simple_form_for(@logbook) do |f| %>
-      <%= f.error_notification %>
-      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-      <div class="d-flex justify-content-between">
-        <% Emoji.all.each do |emoticon| %>
-          <%= f.label :emoji_id, emoticon.title do %>
-          <%= f.radio_button :emoji_id, emoticon.id %>
-          <h1><%= emoticon.image.html_safe %></h1>
+    
+    <%= simple_form_for(@logbook) do |f| %>
+      <div class="carousel slide mt-5 pt-5" id="emojiCarousel" data-controller="carousel">
+        <div class="carousel-inner">
+          <% Emoji.all.each_with_index do |emoji, index| %>
+            <div class="carousel-item <%= 'active' if index == 0 %>"
+                 data-target="carousel.emoji"
+                 data-action="click->carousel#selectEmoji"
+                 data-emoji-id="<%= emoji.id %>">
+              <label>
+                <h1 style="font-size:230px;"><%= emoji.image.html_safe %></h1>
+                <%= radio_button_tag 'logbook[emoji_id]', emoji.id, false, id: nil, style: 'display: none;' %>
+              </label>
+            </div>
           <% end %>
-        <% end %>
-      </div>
-      <div class="d-flex justify-content-end mt-3">
-          <%= f.submit 'Next', class: "btn btn-secondary" %>
+        </div>
+
+        <a class="carousel-control-prev" href="#emojiCarousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#emojiCarousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </a>
       </div>
     <% end %>
   </div>

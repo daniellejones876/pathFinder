@@ -16,8 +16,9 @@
         <p>Monthly Log Calendar:</p>
       </div>
       <%= month_calendar do |date| %>
-        <% if @logbooks.select { |logbook| logbook[:created_at].to_date == date } != [] %>
-          <%= link_to date_logbooks_path(date) do %>
+        <% if @logbooks.select { |logbook| logbook.date == date } != [] %>
+        <% logbook = Logbook.where(date: date) %>
+          <%= link_to logbook_path(logbook.last.id) do %>
             <div class="link_date"><%= date.day %></div>
           <% end %>
         <% else %>

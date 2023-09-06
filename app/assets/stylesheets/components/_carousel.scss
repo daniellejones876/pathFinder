@@ -1,0 +1,28 @@
+#emojiCarousel {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.carousel-inner .carousel-item {
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.item {
+  filter: grayscale(100%);
+  transition: filter 0.4s ease;
+}
+
+.item.selected {
+  filter: grayscale(0%);
+}

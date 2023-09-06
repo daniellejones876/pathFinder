@@ -32,6 +32,8 @@ class LogbooksController < ApplicationController
         redirect_to logbook_book_path(@logbook)
       elsif params[:submit] == 'Playlist recommendation'
         redirect_to logbook_playlist_path(@logbook)
+      elsif params[:submit] == 'Save'
+        redirect_to logbooks_path
       end
       recommendations_controller = RecommendationsController.new
       recommendations_controller.request = request
