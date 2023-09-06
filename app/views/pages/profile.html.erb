@@ -1,30 +1,36 @@
 <div class="container mt-5 text-center">
-  <h1>Hi <%= current_user.first_name %>.</h1>
-  <div class="container">
 
+  <h1>Hi <%= current_user.first_name %> 😘</h1>
 
-  </div>
+  <div class="container ">
+    <div class="journal-card my-5">
+      <p>Weekly Wellcheck Graph:</p>
+      <canvas data-controller="profile-chart" id="chart" data-profile-target="chart"></canvas>
+    </div>
 
-  <div data-controller="profile">
+    <div data-controller="profile">
+      <div class="calendar-container my-3 text-center" data-profile-target="calendar">
+        <div class="class">
+          <p>Monthly Log Calendar:</p>
+        </div>
 
-    <canvas data-controller="profile-chart" id="chart" data-profile-target="chart"></canvas>
-
-    <div class="container my-3 text-center " data-profile-target="calendar">
-      <div class="class">
-        <p>Monthly Log Calendar:</p>
-      </div>
-      <%= month_calendar do |date| %>
-        <% if @logbooks.select { |logbook| logbook.date == date } != [] %>
-        <% logbook = Logbook.where(date: date) %>
-          <%= link_to logbook_path(logbook.last.id) do %>
-            <div class="link_date"><%= date.day %></div>
+        <div class="container mb-5 d-flex-none">
+          <%= month_calendar do |date| %>
+            <% if @logbooks.select { |logbook| logbook.date == date } != [] %>
+            <% logbook = Logbook.where(date: date) %>
+              <%= link_to logbook_path(logbook.last.id) do %>
+                <div class="link_date"><%= date.day %></div>
+              <% end %>
+            <% else %>
+              <%= date.day %>
+            <% end %>
           <% end %>
-        <% else %>
-          <%= date.day %>
-        <% end %>
-      <% end %>
+        </div>
+
+      </div>
     </div>
   </div>
+
 </div>
 
 
