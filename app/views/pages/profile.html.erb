@@ -1,17 +1,15 @@
 <div class="container mt-5 text-center">
   <h1>Hi <%= current_user.first_name %>.</h1>
+  <div class="container">
+
+
+  </div>
 
   <div data-controller="profile">
-    <div class="option-button">
-      <div class="container my-5 text-center">
-        <div class="btn-group" role="group" aria-label="Basic outlined example">
-          <button type="button" class="btn btn-outline-primary" data-action="click->profile#showChart" data-profile-target="weeklyBtn" disabled>Weekly</button>
-          <button type="button" class="btn btn-outline-primary" data-action="click->profile#showCalendar" data-profile-target="monthlyBtn">Monthly</button>
-        </div>
-      </div>
-    </div>
 
-    <div class="container my-3 text-center d-none" data-profile-target="calendar">
+    <canvas data-controller="profile-chart" id="chart" data-profile-target="chart"></canvas>
+
+    <div class="container my-3 text-center " data-profile-target="calendar">
       <div class="class">
         <p>Monthly Log Calendar:</p>
       </div>
@@ -22,13 +20,10 @@
             <div class="link_date"><%= date.day %></div>
           <% end %>
         <% else %>
-        <%= date.day %>
-         <% end %>
+          <%= date.day %>
+        <% end %>
       <% end %>
     </div>
-
-
-    <canvas data-controller="profile-chart" id="chart" data-profile-target="chart"></canvas>
   </div>
 </div>
 
