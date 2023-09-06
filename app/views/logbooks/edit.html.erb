@@ -34,8 +34,8 @@
         </div>
 
 
-        <h5><%= f.input :summary, label: "Today's note" %></h5>
-        <h5><%= f.input :image, as: :file, label: "Today's photo" %></h5>
+        <p><%= f.input :summary, label: "Today's note" %></p>
+        <p><%= f.input :image, as: :file, label: "Today's photo" %></p>
         <%= f.association :user, as: :hidden, input_html: { value: current_user.id }  %>
       </div>
 
