@@ -1,5 +1,6 @@
 <div class="h-container layer_edit">
   <div class="mood-check edit_margin">
+
     <%= simple_form_for(@logbook) do |f| %>
       <%= f.error_notification %>
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
@@ -16,7 +17,7 @@
                   data-emoji-id="<%= emoji.id %>">
                 <label class="<%= 'selected' if index == (@logbook.emoji_id - 1) %>">
                   <%= radio_button_tag 'logbook[emoji_id]', emoji.id, false, id: nil, style: 'display: none;' %>
-                  <h1 style="font-size:130px;"><%= emoji.fadeanimation.html_safe %></h1>
+                  <h1 style="font-size:130px;"><%= emoji.image.html_safe %></h1>
                 </label>
               </div>
             <% end %>
@@ -37,12 +38,12 @@
         <%= f.association :user, as: :hidden, input_html: { value: current_user.id }  %>
       </div>
 
-      <div class="form-actions d-flex justify-content-evenly">
-
-        <%= submit_tag 'Book', name: 'submit', class: "btn btn-secondary rounded" %>
-        <%= submit_tag 'Playlist', name: 'submit', class: "btn btn-secondary rounded" %>
-        <%= submit_tag 'Save', name: 'submit', class: "btn btn-secondary rounded" %>
+      <div class="form-actions d-flex justify-content-around">
+        <%= submit_tag '📖', name: 'submit', class: "btn btn-secondary rounded text-muted shadow-sm", style: "font-size:20px;" %>
+        <%= submit_tag '💾', name: 'submit', class: "btn btn-secondary rounded text-muted shadow-sm", style: "font-size:20px;" %>
+        <%= submit_tag '🎵', name: 'submit', class: "btn btn-secondary rounded text-muted shadow-sm", style: "font-size:20px;" %>
       </div>
+
     <% end %>
   </div>
 </div>

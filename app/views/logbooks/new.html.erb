@@ -11,21 +11,21 @@
                  data-emoji-id="<%= emoji.id %>">
               <label>
 
-                <h1 style="font-size:200px;"><%= emoji.image.html_safe %></h1>
+                <h1 style="font-size:200px;"><%= emoji.animation.html_safe %></h1>
                 <%= radio_button_tag 'logbook[emoji_id]', emoji.id, false, id: nil, style: 'display: none;' %>
               </label>
             </div>
           <% end %>
-        </div>
 
-        <a class="carousel-control-prev" href="#emojiCarousel" role="button" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#emojiCarousel" role="button" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </a>
+          <a class="carousel-control-prev" href="#emojiCarousel" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#emojiCarousel" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </a>
+        </div>
       </div>
     <% end %>
   </div>
