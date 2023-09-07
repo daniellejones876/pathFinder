@@ -114,23 +114,23 @@ logbook4.emoji = sad
 logbook4.user = dani
 logbook4.save
 
-logbook5 = Logbook.new(
-  summary: "The simple pleasures in life never cease to amaze me. Today, I watched a breathtaking sunset and felt at peace with the world. Sometimes, all you need is a moment to reflect and appreciate the beauty around you.",
-  date: "28 Aug 2023",
-  time: "08:56"
-)
-logbook5.emoji = content
-logbook5.user = dani
-logbook5.save
+# logbook5 = Logbook.new(
+#   summary: "The simple pleasures in life never cease to amaze me. Today, I watched a breathtaking sunset and felt at peace with the world. Sometimes, all you need is a moment to reflect and appreciate the beauty around you.",
+#   date: "28 Aug 2023",
+#   time: "08:56"
+# )
+# logbook5.emoji = content
+# logbook5.user = dani
+# logbook5.save
 
-logbook6 = Logbook.new(
-  summary: "Today was absolutely wonderful! I woke up to the warm rays of the sun streaming through my window, and I couldn't help but smile. I spent the day with my closest friends, laughing, sharing stories, and enjoying life's simple pleasures. It's moments like these that make me truly grateful for the beautiful people in my life.",
-  date: "29 Aug 2023",
-  time: "14:19"
-)
-logbook6.emoji = happy
-logbook6.user = dani
-logbook6.save
+# logbook6 = Logbook.new(
+#   summary: "Today was absolutely wonderful! I woke up to the warm rays of the sun streaming through my window, and I couldn't help but smile. I spent the day with my closest friends, laughing, sharing stories, and enjoying life's simple pleasures. It's moments like these that make me truly grateful for the beautiful people in my life.",
+#   date: "29 Aug 2023",
+#   time: "14:19"
+# )
+# logbook6.emoji = happy
+# logbook6.user = dani
+# logbook6.save
 
 logbook7 = Logbook.new(
   summary: "I'm at my wit's end. Everything that could go wrong today did, and I'm left feeling defeated and exhausted. I can only hope that tomorrow brings a glimmer of hope in this sea of despair.",
@@ -141,14 +141,14 @@ logbook7.emoji = sad
 logbook7.user = dani
 logbook7.save
 
-logbook8 = Logbook.new(
-  summary: "I'm in a perpetual state of meh. Nothing excites me, and I can't seem to find the motivation to change that. It's as if I'm drifting through life with no direction.",
-  date: "31 Aug 2023",
-  time: "12:05"
-)
-logbook8.emoji = apathetic
-logbook8.user = dani
-logbook8.save
+# logbook8 = Logbook.new(
+#   summary: "I'm in a perpetual state of meh. Nothing excites me, and I can't seem to find the motivation to change that. It's as if I'm drifting through life with no direction.",
+#   date: "31 Aug 2023",
+#   time: "12:05"
+# )
+# logbook8.emoji = apathetic
+# logbook8.user = dani
+# logbook8.save
 
 logbook9 = Logbook.new(
   summary: "Today was another tough one. The world feels heavy, and I'm struggling to find a way to lighten the load. I long for the day when I can find some respite from this sadness.",
