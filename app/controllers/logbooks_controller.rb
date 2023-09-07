@@ -28,11 +28,11 @@ class LogbooksController < ApplicationController
 
   def update
     if @logbook.update(logbook_params)
-      if params[:submit] == 'Book recommendation'
+      if params[:submit] == "📖"
         redirect_to logbook_book_path(@logbook)
-      elsif params[:submit] == 'Playlist recommendation'
+      elsif params[:submit] == '🎵'
         redirect_to logbook_playlist_path(@logbook)
-      elsif params[:submit] == 'Save'
+      elsif params[:submit] == '💾'
         redirect_to logbooks_path
       end
       recommendations_controller = RecommendationsController.new
