@@ -3,8 +3,10 @@
     <header class="top">
       <h1>Welcome, <%= current_user.first_name %> 💜</h1>
       <p><%= Date.today.strftime("%d of %B, %Y") %></p>
-      <p><em>Chi va piano, va sano e va lontano</em>
-        "Who goes slowly, goes safely and goes far"</p>
+      <div class="banner-text">
+        <p><em>Chi va piano, va sano e va lontano</em> <br>
+          "Who goes slowly, goes safely and goes far"</p>
+      </div>
     </header>
 
     <div class="favorites-container">
@@ -21,28 +23,48 @@
       </div>
 
       <div class="notification-sm">
-        <img src="http://co0kie.github.io/codepen/mindful/buddhist-yoga-pose.svg" alt="">
-        <p><strong>Vinyasa Yoga</strong></p>
+        <div class="heart">
+          <i class="fa-solid fa-heart" style="color: #ccdbdc;"></i>
+        </div>
+        <div class="activities-container">
+          <img src="http://co0kie.github.io/codepen/mindful/buddhist-yoga-pose.svg" alt="">
+          <p><strong>Vinyasa <br>Yoga</strong></p>
+        </div>
       </div>
 
       <%= link_to new_logbook_journal_path(@logbook) do %>
         <div class="notification-sm">
-          <img src="http://co0kie.github.io/codepen/mindful/buddhist-yoga-pose.svg" alt="">
-          <p><strong>Mindful Journaling</strong></p>
+          <div class="heart">
+            <i class="fa-solid fa-heart" style="color: #ccdbdc;"></i>
+          </div>
+          <div class="activities-container">
+            <img src="http://co0kie.github.io/codepen/mindful/buddhist-yoga-pose.svg" alt="">
+            <p><strong>Mindful Journaling</strong></p>
+          </div>
         </div>
       <% end %>
 
       <%= link_to logbook_book_path(@logbook, @logbook.emoji.book_ids) do %>
         <div class="notification-sm">
-          <img src="http://co0kie.github.io/codepen/mindful/buddhist-yoga-pose.svg" alt="">
-          <p><strong>Book Library</strong></p>
+          <div class="heart">
+            <i class="fa-regular fa-heart" style="color: #ccdbdc;"></i>
+          </div>
+          <div class="activities-container">
+            <img src="http://co0kie.github.io/codepen/mindful/buddhist-yoga-pose.svg" alt="">
+            <p><strong>Book <br> Library</strong></p>
+          </div>
         </div>
       <% end %>
 
       <%= link_to logbook_playlist_path(@logbook, @logbook.emoji.playlist_ids) do %>
         <div class="notification-sm">
-          <img src="http://co0kie.github.io/codepen/mindful/buddhist-yoga-pose.svg" alt="">
-          <p><strong>Playlists of the Moment</strong></p>
+          <div class="heart">
+            <i class="fa-solid fa-heart" style="color: #ccdbdc;"></i>
+          </div>
+          <div class="activities-container">
+            <img src="http://co0kie.github.io/codepen/mindful/buddhist-yoga-pose.svg" alt="">
+            <p><strong>Playlists of the Moment</strong></p>
+          </div>
         </div>
       <% end %>
     </div>
