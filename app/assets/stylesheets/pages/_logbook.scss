@@ -1,12 +1,13 @@
 .logbook-container {
   background-color: #ccdbdc;
-  border-radius: 100px;
+  border-radius: 100px 100px 0 0;
   width: 100%;
   padding: 20px;
   position:absolute;
   left: 50%;
   transform: translateX(-50%);
   margin-top: 10px;
+  padding-bottom: 50px;
 }
 
 .layer3 {
