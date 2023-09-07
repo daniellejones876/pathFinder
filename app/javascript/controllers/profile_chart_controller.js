@@ -30,6 +30,7 @@ export default class extends Controller {
       };
 
       const options = {
+        responsive: true,
         plugins: {
           legend: {
             display:false
@@ -42,13 +43,17 @@ export default class extends Controller {
             },
           },
           y: {
+
+            min: 0,
+            max: 6,
             grid: {
               display: false,
             },
             ticks: {
+              autoSkip: false,
               stepSize: 1,
               callback: function (value, index, values) {
-                var customTicks = ['😭', '😟', '😐', '🙂', '😁'];
+                var customTicks = ['', '😭', '😟', '😐', '🙂', '😁', ''];
                 return customTicks[index];
               },
             },

@@ -2,9 +2,11 @@
   <div class="h-container home-bg">
     <header class="top">
       <h1>Welcome, <%= current_user.first_name %> 💜</h1>
-      <%= Date.today.strftime("%d of %B, %Y") %>
-      <p><em>Chi va piano, va sano e va lontano</em></p>
-          "Who goes slowly, goes safely and goes far."
+      <p><%= Date.today.strftime("%d of %B, %Y") %></p>
+      <div class="banner-text">
+        <p><em>Chi va piano, va sano e va lontano</em> <br>
+          "Who goes slowly, goes safely and goes far"</p>
+      </div>
     </header>
 
     <div class="favorites-container">
@@ -21,40 +23,50 @@
       </div>
 
       <div class="notification-sm">
-        <p>
+        <div class="heart">
+          <i class="fa-solid fa-heart" style="color: #ccdbdc;"></i>
+        </div>
+        <div class="activities-container">
+          <img src="http://co0kie.github.io/codepen/mindful/buddhist-yoga-pose.svg" alt="">
+          <p><strong>Vinyasa <br>Yoga</strong></p>
+        </div>
+      </div>
+
+      <%= link_to new_logbook_journal_path(@logbook) do %>
+        <div class="notification-sm">
+          <div class="heart">
+            <i class="fa-solid fa-heart" style="color: #ccdbdc;"></i>
+          </div>
+          <div class="activities-container">
             <img src="http://co0kie.github.io/codepen/mindful/buddhist-yoga-pose.svg" alt="">
-            Mindful Yoga
-        </p>
-      </div>
+            <p><strong>Mindful Journaling</strong></p>
+          </div>
+        </div>
+      <% end %>
 
-      <div class="notification-sm">
-        <p>
+      <%= link_to logbook_book_path(@logbook, @logbook.emoji.book_ids) do %>
+        <div class="notification-sm">
+          <div class="heart">
+            <i class="fa-regular fa-heart" style="color: #ccdbdc;"></i>
+          </div>
+          <div class="activities-container">
             <img src="http://co0kie.github.io/codepen/mindful/buddhist-yoga-pose.svg" alt="">
-            Mindful Yoga
-        </p>
-      </div>
+            <p><strong>Book <br> Library</strong></p>
+          </div>
+        </div>
+      <% end %>
 
-      <div class="notification-sm">
-        <p>
-          <strong>
-            <i class="fa-solid fa-bell" style="color: #02394a;"></i>
-            Activities Today:
-          </strong>
-            Meditation and Relaxation
-        </p>
-        <small>8:00pm</small>
-      </div>
-
-      <div class="notification-sm">
-        <p>
-          <strong>
-            <i class="fa-solid fa-bell" style="color: #02394a;"></i>
-            Activities Today:
-          </strong>
-            Meditation and Relaxation
-        </p>
-        <small>8:00pm</small>
-      </div>
+      <%= link_to logbook_playlist_path(@logbook, @logbook.emoji.playlist_ids) do %>
+        <div class="notification-sm">
+          <div class="heart">
+            <i class="fa-solid fa-heart" style="color: #ccdbdc;"></i>
+          </div>
+          <div class="activities-container">
+            <img src="http://co0kie.github.io/codepen/mindful/buddhist-yoga-pose.svg" alt="">
+            <p><strong>Playlists of the Moment</strong></p>
+          </div>
+        </div>
+      <% end %>
     </div>
 
 <!--Waves Container-->

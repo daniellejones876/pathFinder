@@ -1,5 +1,6 @@
-<div class="h-container layer2 mb-5">
-  <div class="mood-check">
+<div class="h-container layer_edit">
+  <div class="mood-check edit_margin">
+
     <%= simple_form_for(@logbook) do |f| %>
       <%= f.error_notification %>
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
@@ -21,7 +22,6 @@
               </div>
             <% end %>
           </div>
-
           <a class="carousel-control-prev" href="#emojiCarousel" role="button" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
@@ -33,14 +33,12 @@
 
         </div>
 
-
         <p><%= f.input :summary, label: "Today's note" %></p>
         <p><%= f.input :image, as: :file, label: "Today's photo" %></p>
         <%= f.association :user, as: :hidden, input_html: { value: current_user.id }  %>
       </div>
 
       <div class="form-actions d-flex justify-content-around">
-
         <%= submit_tag '📖', name: 'submit', class: "btn btn-secondary rounded text-muted shadow-sm", style: "font-size:20px;" %>
         <%= submit_tag '💾', name: 'submit', class: "btn btn-secondary rounded text-muted shadow-sm", style: "font-size:20px;" %>
         <%= submit_tag '🎵', name: 'submit', class: "btn btn-secondary rounded text-muted shadow-sm", style: "font-size:20px;" %>
