@@ -14,6 +14,7 @@
                  data-action="click->carousel#selectEmoji"
                  data-emoji-id="<%= emoji.id %>">
               <label>
+
                 <h1 style="font-size:200px;"><%= emoji.image.html_safe %></h1>
                 <%= radio_button_tag 'logbook[emoji_id]', emoji.id, false, id: nil, style: 'display: none;' %>
               </label>
