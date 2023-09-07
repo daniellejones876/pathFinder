@@ -46,20 +46,22 @@ class LogbooksController < ApplicationController
 
   def date
     @date = Date.parse(params[:date])
-    @logbooks = Logbook.where("EXTRACT(YEAR from created_at) = ? and EXTRACT(MONTH from created_at) = ? and EXTRACT(DAY from created_at) = ?", @date.year, @date.month, @date.day)
+    @logbooks = Logbook.where(
+      "EXTRACT(YEAR from created_at) = ? and EXTRACT(MONTH from created_at) = ? and EXTRACT(DAY from created_at) = ?", @date.year, @date.month, @date.day
+    )
   end
 
   def data
     current_date = Date.today
     start_of_week = current_date.beginning_of_week
     end_of_week = current_date.end_of_week
-    @current_logbooks = Logbook.where(created_at: start_of_week..end_of_week).where(user_id: current_user.id)
+    @current_logbooks = Logbook.where(date: start_of_week..end_of_week).where(user_id: current_user.id)
     @data = {}
-    @current_logbook_day = @current_logbooks.group_by{ |e| e.created_at.strftime("%a")}
+    @current_logbook_day = @current_logbooks.group_by { |e| e.date.strftime("%a") }
     @current_logbook_day.each_value do |array_logbooks|
       max_value = 0
       array_logbooks.each do |logbook|
-        max_value = logbook.emoji.value >= max_value ? logbook.emoji.value : max_value
+        max_value = logbook.emoji.value if logbook.emoji.value >= max_value
       end
       @data[@current_logbook_day.key(array_logbooks)] = max_value
     end

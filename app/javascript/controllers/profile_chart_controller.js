@@ -20,19 +20,33 @@ export default class extends Controller {
       const sunday = dataReceived.data.Sun
 
       const showData = {
-        labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
         datasets: [{
             data: [monday, tuesday, wednesday, thursday, friday, saturday, sunday],
-            backgroundColor: 'rgba(75, 192, 192, 0.2)', // Fill color
-            borderColor: 'rgba(75, 192, 192, 1)', // Line color
+            backgroundColor: 'rgb(166, 171, 218)',
+            borderColor: 'rgb(181, 155, 205)',
             borderWidth: 2
         }]
       };
 
       const options = {
+        plugins: {
+          legend: {
+            display:false
+          },
+        },
         scales: {
+          x: {
+            grid: {
+              display: false,
+            },
+          },
           y: {
+            grid: {
+              display: false,
+            },
             ticks: {
+              stepSize: 1,
               callback: function (value, index, values) {
                 var customTicks = ['😭', '😟', '😐', '🙂', '😁'];
                 return customTicks[index];

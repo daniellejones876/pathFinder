@@ -30,4 +30,7 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  simple_calendar:
+    previous: "<<"
+    next: ">>"
   hello: "Hello world"

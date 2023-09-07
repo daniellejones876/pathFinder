@@ -182,7 +182,7 @@ logbook12 = Logbook.new(
   date: "04 Sep 2023",
   time: "09:37"
 )
-logbook12.emoji = happy
+logbook12.emoji = sad
 logbook12.user = dani
 logbook12.save
 
@@ -191,7 +191,7 @@ logbook13 = Logbook.new(
   date: "05 Sep 2023",
   time: "13:50"
 )
-logbook13.emoji = apathetic
+logbook13.emoji = terrible
 logbook13.user = dani
 logbook13.save
 
@@ -200,7 +200,7 @@ logbook14 = Logbook.new(
   date: "06 Sep 2023",
   time: "20:29"
 )
-logbook14.emoji = happy
+logbook14.emoji = apathetic
 logbook14.user = dani
 logbook14.save
 
@@ -209,9 +209,18 @@ logbook15 = Logbook.new(
   date: "07 Sep 2023",
   time: "11:03"
 )
-logbook15.emoji = happy
+logbook15.emoji = content
 logbook15.user = dani
 logbook15.save
+
+logbook16 = Logbook.new(
+  summary: "Today, I was on cloud nine! I accomplished something I've been working so hard towards, and the feeling of success is absolutely intoxicating. It's amazing what dedication and perseverance can achieve.",
+  date: "08 Sep 2023",
+  time: "11:03"
+)
+logbook16.emoji = happy
+logbook16.user = dani
+logbook16.save
 
 puts "Logbooks created!"
 puts "Creating prompts..."
