@@ -6,7 +6,6 @@
 
       <div class="form-inputs">
         <h3>How was your day?</h3>
-
         <div class="carousel slide" id="emojiCarousel" data-controller="edit-carousel">
           <div class="carousel-inner">
             <% Emoji.all.each_with_index do |emoji, index| %>
@@ -40,10 +39,11 @@
       </div>
 
       <div class="form-actions">
-
-        <%= submit_tag 'Book recommendation', name: 'submit', class: "btn btn-secondary rounded" %>
-        <%= submit_tag 'Playlist recommendation', name: 'submit', class: "btn btn-secondary rounded" %>
-        <%= submit_tag 'Save', name: 'submit', class: "btn btn-secondary rounded" %>
+        <div class="d-flex justify-content-between mt-2">
+          <%= submit_tag 'Book', name: 'submit', class: "btn btn-secondary rounded" %>
+          <%= submit_tag 'Playlist', name: 'submit', class: "btn btn-secondary rounded" %>
+          <%= submit_tag 'Save', name: 'submit', class: "btn btn-secondary rounded" %>
+        </div>
       </div>
     <% end %>
   </div>

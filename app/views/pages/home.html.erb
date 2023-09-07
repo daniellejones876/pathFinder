@@ -2,9 +2,9 @@
   <div class="h-container home-bg">
     <header class="top">
       <h1>Welcome, <%= current_user.first_name %> 💜</h1>
-      <%= Date.today.strftime("%d of %B, %Y") %>
-      <p><em>Chi va piano, va sano e va lontano</em></p>
-          "Who goes slowly, goes safely and goes far."
+      <p><%= Date.today.strftime("%d of %B, %Y") %></p>
+      <p><em>Chi va piano, va sano e va lontano</em>
+          <span>"Who goes slowly, goes safely and goes far."</span></p>
     </header>
 
     <div class="favorites-container">
@@ -23,38 +23,35 @@
       <div class="notification-sm">
         <p>
             <img src="http://co0kie.github.io/codepen/mindful/buddhist-yoga-pose.svg" alt="">
-            Mindful Yoga
+            Pilates
         </p>
       </div>
+      <%= link_to new_logbook_journal_path(@logbook) do %>
+        <div class="notification-sm">
+          <p>
+              <img src="http://co0kie.github.io/codepen/mindful/buddhist-yoga-pose.svg" alt="">
+              Mindful Journaling
+          </p>
+        </div>
+      <% end %>
 
-      <div class="notification-sm">
-        <p>
-            <img src="http://co0kie.github.io/codepen/mindful/buddhist-yoga-pose.svg" alt="">
-            Mindful Yoga
-        </p>
-      </div>
+      <%= link_to logbook_book_path(@logbook, @logbook.emoji.book_ids) do %>
+        <div class="notification-sm">
+          <p>
+              <img src="http://co0kie.github.io/codepen/mindful/buddhist-yoga-pose.svg" alt="">
+              Book recommendation
+          </p>
+        </div>
+      <% end %>
 
-      <div class="notification-sm">
-        <p>
-          <strong>
-            <i class="fa-solid fa-bell" style="color: #02394a;"></i>
-            Activities Today:
-          </strong>
-            Meditation and Relaxation
-        </p>
-        <small>8:00pm</small>
-      </div>
-
-      <div class="notification-sm">
-        <p>
-          <strong>
-            <i class="fa-solid fa-bell" style="color: #02394a;"></i>
-            Activities Today:
-          </strong>
-            Meditation and Relaxation
-        </p>
-        <small>8:00pm</small>
-      </div>
+      <%= link_to logbook_playlist_path(@logbook, @logbook.emoji.playlist_ids) do %>
+        <div class="notification-sm">
+          <p>
+              <img src="http://co0kie.github.io/codepen/mindful/buddhist-yoga-pose.svg" alt="">
+              Playlist Recommendation
+          </p>
+        </div>
+      <% end %>
     </div>
 
 <!--Waves Container-->

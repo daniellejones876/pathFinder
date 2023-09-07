@@ -27,7 +27,7 @@
 }
 
 .landing-welcome {
-  background-color: rgba(204, 219, 220, 0.4);
+  background-color: rgba(180, 154, 204, 0.2);
   border-radius: 30px;
   font-weight: 500;
   transform: translateY(-35%);
@@ -41,11 +41,10 @@
   width: 250px;
   height: 250px;
   transform: translateY(-20%);
-  padding-top: 200px;
+  padding-top: 20px;
 }
 
 .blob:nth-child(2) {
   filter: blur(30px);
-  transform: translateY(10%);
+  // transform: translateY(10%);
 }
-
