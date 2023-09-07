@@ -20,11 +20,11 @@ export default class extends Controller {
       const sunday = dataReceived.data.Sun
 
       const showData = {
-        labels: ['Mon', 'Tue', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
         datasets: [{
             data: [monday, tuesday, wednesday, thursday, friday, saturday, sunday],
-            backgroundColor: 'blue',
-            borderColor: 'red',
+            backgroundColor: 'rgb(166, 171, 218)',
+            borderColor: 'rgb(181, 155, 205)',
             borderWidth: 2
         }]
       };
