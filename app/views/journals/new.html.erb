@@ -1,7 +1,6 @@
-<div class="h-container home-bg spacer">
-  <div class="container mt-5">
-
-    Today, <%= Date.today.strftime("%d %b, %Y") %>
+<div class="h-container layer-journal">
+  <div class="journal-container">
+    <h1>Today: <%= Date.today.strftime("%d %b, %Y") %></h1>
 
     <%= simple_form_for [@logbook, @journal] do |f| %>
       <%= f.error_notification %>
@@ -15,12 +14,12 @@
           <%= f.input :prompt_id, as: :hidden, input_html: { value: @sample_prompt.id, data: {shuffle_prompt_target: "promptInput" } } %>
           <div class="d-flex">
             <div>
-              <button data-action="click->shuffle-prompt#shuffle", class="btn btn-outline-secondary mb-5" >
+              <button data-action="click->shuffle-prompt#shuffle", class="btn btn-secondary mb-3" >
                 <i class="fa-solid fa-shuffle"></i> New prompt
               </button>
             </div>
             <div class="px-2">
-              <button data-action="click->shuffle-prompt#clear", class="btn btn-outline-secondary mb-5" >
+              <button data-action="click->shuffle-prompt#clear", class="btn btn-outline-secondary mb-4" >
                 <i class="fa-solid fa-xmark"></i>
               </button>
             </div>
@@ -29,8 +28,8 @@
         </div>
       </div>
 
-      <div class="form-actions">
-        <%= f.submit 'Save', class: "btn btn-outline-secondary" %>
+      <div class="form-actions d-flex justify-content-end">
+        <%= f.submit 'Save', class: "btn btn-secondary" %>
       </div>
     <% end %>
   </div>

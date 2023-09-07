@@ -1,14 +1,26 @@
+.new_margin {
+  margin-top: 300px;
+}
+
+.edit_margin {
+  margin-top: 230px;
+}
 .mood-check {
-  background-color: rgba(204, 219, 220, 0.99);
-  border-radius: 30px;
+  background-color: rgb(204, 219, 220);
+  border-radius: 100px;
   width: 90%;
+  padding-top: 50px;
   padding: 20px;
   position:absolute;
   left: 50%;
   transform: translateX(-50%);
-  margin-top: 300px;
+  margin-bottom: 50px;
 }
 
 .layer2 {
   background-image: asset-url('backgrounds/emoji.png');
+}
+
+.layer_edit {
+  background-image: asset-url('backgrounds/emoji_edit.png');
 }
