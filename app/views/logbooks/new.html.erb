@@ -1,14 +1,18 @@
-<div class="h-container layer2">
-  <div class="mood-check new_margin">
-      <h3>How was your day?</h3>
+<div class="landing-container landing-bg-image">
+  <div class="landing-welcome">
+    <h1>pathFinder.</h1>
+    <br>
+    <h2>How was your day?</h2>
+  </div>
+  <div class="w-100">
     <%= simple_form_for(@logbook) do |f| %>
-      <div class="carousel slide mt-5 pt-5" id="emojiCarousel" data-controller="carousel">
+      <div class="carousel slide mt-2 pt-1" id="emojiCarousel" data-controller="carousel">
         <div class="carousel-inner">
           <% Emoji.all.each_with_index do |emoji, index| %>
             <div class="carousel-item <%= 'active' if index == 0 %>"
-                 data-target="carousel.emoji"
-                 data-action="click->carousel#selectEmoji"
-                 data-emoji-id="<%= emoji.id %>">
+                  data-target="carousel.emoji"
+                  data-action="click->carousel#selectEmoji"
+                  data-emoji-id="<%= emoji.id %>">
               <label>
 
                 <h1 style="font-size:200px;"><%= emoji.animation.html_safe %></h1>

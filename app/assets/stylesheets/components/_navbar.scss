@@ -1,11 +1,11 @@
 .navbar {
-  position: fixed;
+  position: sticky;
   width: 80%;
   height: 50px;
   border-radius: 22px;
   margin-bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 40px;
+  // transform: translateX(-50%);
   bottom: 0;
   background:rgba(2, 57, 74, 0.4);
   z-index: 10;
