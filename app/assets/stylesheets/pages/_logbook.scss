@@ -3,13 +3,10 @@
   border-radius: 100px 100px 0 0;
   width: 100%;
   padding: 20px;
-  position:absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  margin: 0 auto;
   margin-top: 10px;
   padding-bottom: 50px;
   margin-bottom: 50px;
-  height: 100vh;
 }
 
 .layer3 {
@@ -17,7 +14,7 @@
   padding-top: 75px;
 }
 
-.j-container {
+.journal-header-container {
   display:flex;
   font-size:50px;
   font-weight:700;
@@ -49,10 +46,7 @@
   border-radius: 30px;
   width: 90%;
   padding: 20px;
-  position:absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-bottom: 50px;
+  margin: 0 auto 50px auto;
 }
 
 

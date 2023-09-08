@@ -11,8 +11,9 @@
 
 .h-container {
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 100px);
   margin: 0 auto;
+  margin-bottom: 100px;
   border-radius: 30px;
   background-repeat: no-repeat;
 }
