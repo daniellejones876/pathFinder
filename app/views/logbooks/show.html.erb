@@ -2,7 +2,6 @@
   <div class="j-container">
     <h1><span><%= @logbook.date.strftime("%d of %B") %><br><%= @logbook.time.strftime("%I:%M %p") %></span></h1>
   </div>
-
   <div class="journal-entry">
     <h5><%= @logbook.emoji.title %></h5>
     <%= @logbook.emoji.image.html_safe %>

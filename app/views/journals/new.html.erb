@@ -1,6 +1,6 @@
 <div class="h-container layer-journal">
   <div class="journal-container">
-    <h1>Today: <%= Date.today.strftime("%d %b, %Y") %></h1>
+    <h1>Today: <br><%= Date.today.strftime("%d %b, %Y") %></h1>
 
     <%= simple_form_for [@logbook, @journal] do |f| %>
       <%= f.error_notification %>
