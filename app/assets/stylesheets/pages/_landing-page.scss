@@ -17,6 +17,26 @@
     line-height: 20px;
   }
 }
+
+.new-log-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  min-height: 390px;
+  padding-top: 350px;
+  background: #CCDBDC;
+  h1 {
+    color: #02394A;
+    font-weight: 600;
+  }
+
+  p {
+    color: #02394A;
+    line-height: 20px;
+  }
+}
+
 .landing-bg-image{
   width: 100%;
   background-repeat: no-repeat;
@@ -48,4 +68,3 @@
   filter: blur(30px);
   transform: translateY(10%);
 }
-
